@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class GarlicBehaviour : MeleeWepBehaviour
 {
+
+    // We create a list of marked enemies
+    // The garlic only attacks enemies who have never touched it before once
+    // Otherwise, enemies will repeatedly take damage from the garlic (Too OP)
+    List<GameObject> markedEnemies;
+
     protected override void Start()
     {
         base.Start();
         //kc = FindObjectOfType<KnifeController>();
+        markedEnemies = new List<GameObject>();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnTriggerEnter2D(Collider2D col)
     {
-        
+        if(col.CompareTag("Enemy") && !markedEnemies.Contains(col.gameObject))
+        {
+            EnemyStats enemy = col.GetComponent<EnemyStats>();
+            enemy.TakeDamage(currentDamage); // Use current damage, as we may add damage modifiers later, rather than weapondata.damage
+            
+            markedEnemies.Add(col.gameObject); // Marked enemies will no longer take another instance of damage from current garlic
+                                                // They will still take damage from the next spawn
+        }
     }
 }

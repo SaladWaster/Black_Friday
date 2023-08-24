@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4867349613537994232}
   - component: {fileID: 3913676292823143626}
   - component: {fileID: 6357024698513360646}
+  - component: {fileID: 1255592840827622502}
   m_Layer: 0
   m_Name: slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,4 +147,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc417f58b7ec0b941aa488e93cb46658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  enemyData: {fileID: 0}
+--- !u!114 &1255592840827622502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324005534906758945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b3ca921477b7f4e8ab52b4a1329d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 0b9f9ae694579834dad8c5bbf21c18d3, type: 2}

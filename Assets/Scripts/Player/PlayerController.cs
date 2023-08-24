@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public float lastVerticalVector;
     [HideInInspector] public Vector2 lastMovedVector;
 
+    // For kyoko tracking
+    [SerializeField]
+    public Transform posTransform;
+
 
     // FOR COLLISIONS ///////////
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>(); // Create ray casts (RaycastHit2D) from the rigidbody to check for collisions between the Player's collider and other colliders

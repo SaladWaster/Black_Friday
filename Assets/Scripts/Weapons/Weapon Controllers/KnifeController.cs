@@ -13,7 +13,7 @@ public class KnifeController : AutoWepController
     protected override void Attack()
     {
         base.Attack();
-        GameObject spawnedKnife = Instantiate(weaponData.prefab);
+        GameObject spawnedKnife = Instantiate(weaponData.Prefab);
         spawnedKnife.transform.position = transform.position; // Assigns position to be same as this object, which is parented to the player
         // spawnedKnife.GetComponent<KnifeBehaviour>().DirectionChecker(pm.movement); // movement from PlayerController, as reference to player movement direction
         spawnedKnife.GetComponent<KnifeBehaviour>().DirectionChecker(pm.lastMovedVector); // Updated to lastMovedVector

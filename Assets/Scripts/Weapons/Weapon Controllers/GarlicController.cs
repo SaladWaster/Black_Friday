@@ -13,7 +13,7 @@ public class GarlicController : AutoWepController
     protected override void Attack()
     {
         base.Attack();
-        GameObject spawnedGarlic = Instantiate(weaponData.prefab);
+        GameObject spawnedGarlic = Instantiate(weaponData.Prefab);
         spawnedGarlic.transform.position = transform.position; // Assigns position to be same as this object, which is parented to the player
         spawnedGarlic.transform.parent = transform; // Updated to lastMovedVector
     

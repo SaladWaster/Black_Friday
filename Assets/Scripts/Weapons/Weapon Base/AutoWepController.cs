@@ -22,7 +22,7 @@ public class AutoWepController : MonoBehaviour
     protected virtual void Start()
     {
         pm = FindObjectOfType<PlayerController>();
-        currentCooldown = weaponData.cooldownDuration;
+        currentCooldown = weaponData.CooldownDuration;
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class AutoWepController : MonoBehaviour
     protected virtual void Attack()
     {
         print("I am auto attacking!");
-        currentCooldown  = weaponData.cooldownDuration;
+        currentCooldown  = weaponData.CooldownDuration;
         
     }
 }
