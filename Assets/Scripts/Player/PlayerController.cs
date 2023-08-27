@@ -7,19 +7,19 @@ public class PlayerController : MonoBehaviour
 {
     [HideInInspector] public Vector2 movement;
 
-    Rigidbody2D rb;
+    //Rigidbody2D rb;
 
     public ContactFilter2D movementFilter;
-    public float moveSpeed = 1f;
+    //public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
 
     [HideInInspector] public float lastHorizontalVector;
     [HideInInspector] public float lastVerticalVector;
     [HideInInspector] public Vector2 lastMovedVector;
 
-    // For kyoko tracking
-    [SerializeField]
-    public Transform posTransform;
+    //References the player character Scriptable Object for stats
+    Rigidbody2D rb;
+    public CharacterScriptableObject characterData;
 
 
     // FOR COLLISIONS ///////////
@@ -118,7 +118,9 @@ public class PlayerController : MonoBehaviour
             direction,
             movementFilter, // The settings that determine what is considered a hit
             castCollisions, // List of collisions
-            moveSpeed * Time.deltaTime *2 + collisionOffset // The distance to cast i.e. movement plus a small offset
+            // moveSpeed * Time.deltaTime *2 + collisionOffset // The distance to cast i.e. movement plus a small offset
+            characterData.MoveSpeed * Time.deltaTime *2 + collisionOffset // The distance to cast i.e. movement plus a small offset
+
         );
         return count;
     }

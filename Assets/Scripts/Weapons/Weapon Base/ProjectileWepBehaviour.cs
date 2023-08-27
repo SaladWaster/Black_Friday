@@ -101,6 +101,11 @@ public class ProjectileWepBehaviour : MonoBehaviour
             enemy.TakeDamage(currentDamage); // Use current damage, as we may add damage modifiers later, rather than weapondata.damage
             ReducePierce();
         }
+        // else if(col.gameObject.TryGetComponent("Props"))
+        // {
+        //     breakable.TakeDamage(currentDamage);
+        //     ReducePierce();
+        // }
     }
 
 
