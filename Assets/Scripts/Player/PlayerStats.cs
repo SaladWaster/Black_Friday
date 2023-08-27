@@ -147,4 +147,24 @@ public class PlayerStats : MonoBehaviour
         //Destroy(gameObject);
         Debug.Log("Oooofff!!!");
     }
+
+    ///// ***STAT INCREASES DUE TO ITEM PICK-UPS HERE BELOW*** /////
+    ///
+
+    public void RestoreHealth(float amount)
+    {
+        //Only causes heal if not at max heatlh
+        if(currentHealth < characterData.MaxHealth)
+        {
+            currentHealth += amount;
+
+            // If the health healed casuses current health to exceed the Max, set the health to Max
+            if(currentHealth > characterData.MaxHealth)
+            {
+                currentHealth = characterData.MaxHealth;
+            }
+
+        }
+        
+    }
 }

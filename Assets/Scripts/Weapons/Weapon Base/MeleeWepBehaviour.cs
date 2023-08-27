@@ -47,19 +47,16 @@ public class MeleeWepBehaviour : MonoBehaviour
             enemy.TakeDamage(currentDamage); // Use current damage, as we may add damage modifiers later, rather than weapondata.damage
             //ReducePierce();
         }
-        // else if(col.gameObject.TryGetComponent("Props"))
-        // {
-        //     breakable.TakeDamage(currentDamage);
-        // }
+        else if(col.CompareTag("Prop"))
+        {
+            if(col.gameObject.TryGetComponent(out BreakableProps breakable))
+            {
+                breakable.TakeDamage(currentDamage);
+            }
+            
+        }
     }
 
 
-    // void ReducePierce() // Destroys projectiles when pierce is 0, rather than waiting for timer despawns
-    // {
-    //     currentPierce--;
-    //     if(currentPierce <= 0 )
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
+
 }
