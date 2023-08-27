@@ -38,5 +38,23 @@ public class EnemyStats : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+
+    // Use OnCollision STAY 2D, so that the contact only triggers the event once until the player moves away
+    public void OnCollisionStay2D(Collision2D col)
+    {
+        
+        // References the script from collided collider and deal damage using TakeDamage() from PlayerStats script
+        
+        // MAKE SURE TO ASSIGN TAGS TO COLLISION OBJECTS ***
+        // CLICK THE OBJECT IN THE HIERACHY, THEN IN THE INSPECTOR TOP SET THE TAG e.g Tag "Player"
+        if(col.gameObject.CompareTag("Player"))
+        {
+            // Debug.Log("Collision test");
+            PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
+            player.TakeDamage(currentDamage); // Use current damage, as we may add damage modifiers later, rather than weapondata.damage
+        }
+    }
+    
     
 }
