@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     //Rigidbody2D rb;
 
     public ContactFilter2D movementFilter;
-    //public float moveSpeed = 1f;
+    //public float moveSpeed;
     public float collisionOffset = 0.05f;
 
     [HideInInspector] public float lastHorizontalVector;
@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
 
     //References the player character Scriptable Object for stats
     Rigidbody2D rb;
-    public CharacterScriptableObject characterData;
+    // public CharacterScriptableObject characterData;
+    PlayerStats player;
 
 
     // FOR COLLISIONS ///////////
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GetComponent<PlayerStats>();
         rb = GetComponent<Rigidbody2D>();
         lastMovedVector = new Vector2(1, 0f);   // Startup auto attack direction, facing right
         // If we dont initialise, the auto attacks wont have momentum unless the player moves
@@ -49,11 +51,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
+    
 
     // Update called by time, instead of by frames
     void FixedUpdate()
@@ -80,27 +78,33 @@ public class PlayerController : MonoBehaviour
 
         // COLLISION BEHAVIOUR BELOW
 
+        /////// FOR EACH TIME.DELTATIME * X, X is the current modifier for speed...
+        ///
+
         // calling checkCollisions function created
         int count = checkCollisions(movement);
 
         // Only let the player move if there isn't any collision detected
         if (count == 0)
         {
-            transform.Translate(movement * Time.deltaTime *5);
+            //transform.Translate(movement * Time.deltaTime * characterData.MoveSpeed);
+            transform.Translate(movement * Time.deltaTime * player.currentMoveSpeed);
             return; // If no collisions, move the player and exit from the function
         }
         // If we hit something, try moving in the x direction
         count = checkCollisions(new Vector2(movement.x, 0));
         if (count == 0)
         {
-            transform.Translate(new Vector2(movement.x, 0) * Time.deltaTime *2);
+            // transform.Translate(new Vector2(movement.x, 0) * Time.deltaTime * characterData.MoveSpeed);
+            transform.Translate(new Vector2(movement.x, 0) * Time.deltaTime * player.currentMoveSpeed);
             return; // If no collisions in current X direction, move the player and exit from the function
         }
         // If we hit something, try moving in the y direction
         count = checkCollisions(new Vector2(0, movement.y));
         if (count == 0)
         {
-            transform.Translate(new Vector2(0, movement.y) * Time.deltaTime *2);
+            // transform.Translate(new Vector2(0, movement.y) * Time.deltaTime * characterData.MoveSpeed);
+            transform.Translate(new Vector2(0, movement.y) * Time.deltaTime * player.currentMoveSpeed);
             return; // If no collisions in current Y direction, move the player and exit from the function
         }
 
@@ -119,7 +123,9 @@ public class PlayerController : MonoBehaviour
             movementFilter, // The settings that determine what is considered a hit
             castCollisions, // List of collisions
             // moveSpeed * Time.deltaTime *2 + collisionOffset // The distance to cast i.e. movement plus a small offset
-            characterData.MoveSpeed * Time.deltaTime *2 + collisionOffset // The distance to cast i.e. movement plus a small offset
+            //characterData.MoveSpeed * Time.deltaTime *2 + collisionOffset // The distance to cast i.e. movement plus a small offset
+            player.currentMoveSpeed * Time.deltaTime *2 + collisionOffset // The distance to cast i.e. movement plus a small offset
+
 
         );
         return count;
@@ -193,21 +199,5 @@ public class PlayerController : MonoBehaviour
         swordAttack.StopAttack();
     }
 
-    // public void AutoAttack()
-    // {
-    //     if (spriteRenderer.flipX)
-    //     {
-    //         autoAttack.AutoAttackLeft();
-    //     }
-    //     else
-    //     {
-    //         autoAttack.AutoAttackRight();
-    //     }
-    // }
-
-    // public void StopAutoAttack()
-    // {
-    //     autoAttack.StopAutoAttack();
-    // }
 
 }

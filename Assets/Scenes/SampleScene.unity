@@ -3625,6 +3625,67 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!1 &1957070971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1957070972}
+  - component: {fileID: 1957070974}
+  - component: {fileID: 1957070973}
+  m_Layer: 0
+  m_Name: Collector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1957070972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957070971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1335608809528585130}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1957070973
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957070971}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &1957070974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957070971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae9140898eef1d47a21136e5860211d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2080937850
 GameObject:
   m_ObjectHideFlags: 0
@@ -3870,6 +3931,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: b728310620fd8cc4eb5f0a8466a0e6f9, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentRecovery: 0
+  currentMight: 0
+  currentProjectileSpeed: 0
+  currentMagnet: 0
   experience: 0
   level: 1
   experienceCap: 0
@@ -3881,18 +3948,6 @@ MonoBehaviour:
   - startLevel: 4
     endLevel: 5
     experienceCapIncrease: 200
---- !u!114 &1335608809528585144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62549847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae9140898eef1d47a21136e5860211d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1760038704648510666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4003,7 +4058,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6809044510981986061, guid: d9c4235c8ba83aa44bbf8aff4117b7e5, type: 3}
       propertyPath: drops.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6809044510981986061, guid: d9c4235c8ba83aa44bbf8aff4117b7e5, type: 3}
       propertyPath: drops.Array.data[0].name
@@ -4018,16 +4073,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5828225064562824391, guid: 7b0efe5d1772ff04285e9188f17b5890, type: 3}
     - target: {fileID: 1324005534906758945, guid: d9c4235c8ba83aa44bbf8aff4117b7e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324005534906758945, guid: d9c4235c8ba83aa44bbf8aff4117b7e5, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3913676292823143626, guid: d9c4235c8ba83aa44bbf8aff4117b7e5, type: 3}
       propertyPath: m_Size.x
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3913676292823143626, guid: d9c4235c8ba83aa44bbf8aff4117b7e5, type: 3}
       propertyPath: m_Size.y
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5105290881146671073, guid: d9c4235c8ba83aa44bbf8aff4117b7e5, type: 3}
       propertyPath: m_RootOrder

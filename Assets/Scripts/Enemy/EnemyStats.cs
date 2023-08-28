@@ -9,9 +9,12 @@ public class EnemyStats : MonoBehaviour
     // CURRENT stats
     // These are essential as we do not want to write anything to the variables of the actual ScriptableObjects
     // e.g changes to damage, health and movement speed due to skills should only exist CURRENTLY
-    float currentMoveSpeed;
-    float currentHealth;
-    float currentDamage;
+    [HideInInspector]
+    public float currentMoveSpeed;
+    [HideInInspector]
+    public float currentHealth;
+    [HideInInspector]
+    public float currentDamage;
 
     
     // Awake calls before start, is more reliable
