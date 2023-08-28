@@ -24,7 +24,8 @@ public class GarlicBehaviour : MeleeWepBehaviour
         if(col.CompareTag("Enemy") && !markedEnemies.Contains(col.gameObject))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(currentDamage); // Use current damage, as we may add damage modifiers later, rather than weapondata.damage
+            enemy.TakeDamage(GetCurrentDamage()); // Use current damage, as we may add damage modifiers later, rather than weapondata.damage
+                                                    // Updated with GetCurrentDamage, we accounts for modifiers
             
             markedEnemies.Add(col.gameObject); // Marked enemies will no longer take another instance of damage from current garlic
                                                 // They will still take damage from the next spawn
@@ -33,7 +34,7 @@ public class GarlicBehaviour : MeleeWepBehaviour
         {
             if(col.gameObject.TryGetComponent(out BreakableProps breakable))
             {
-                breakable.TakeDamage(currentDamage);
+                breakable.TakeDamage(GetCurrentDamage());
                 
                 markedEnemies.Add(col.gameObject);
             }
