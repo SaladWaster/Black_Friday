@@ -25,6 +25,12 @@ public class DropRateManager : MonoBehaviour
     void OnDestroy()
     {
 
+        // ensure function only runs when scene is loaded, removing error message
+        if(!gameObject.scene.isLoaded)
+        {
+            return;
+        }
+
         // Specify UnityEngine to prevent use of other random number generators
         // Range of 100%
         float randomNumber = UnityEngine.Random.Range(0f, 100f);

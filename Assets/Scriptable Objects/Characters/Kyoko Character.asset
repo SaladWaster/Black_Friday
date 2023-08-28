@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Kyoko Character
   m_EditorClassIdentifier: 
   startingWeapon: {fileID: 0}
-  moveSpeed: 1
+  moveSpeed: 10
   maxHealth: 1000
-  recovery: 0
+  recovery: 1
   might: 0
   projectileSpeed: 0
+  magnet: 1

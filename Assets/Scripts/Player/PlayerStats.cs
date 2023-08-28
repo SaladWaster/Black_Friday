@@ -8,14 +8,32 @@ public class PlayerStats : MonoBehaviour
     public CharacterScriptableObject characterData;
 
 
-    // CURRENT stats
+
+    // // CURRENT stats
+    // // These are essential as we do not want to write anything to the variables of the actual ScriptableObjects
+    // // e.g changes to damage, health and movement speed due to skills should only exist CURRENTLY
+    // float currentMoveSpeed;
+    // float currentHealth;
+    // float currentRecovery;
+    // float currentMight;
+    // float currentProjectileSpeed;
+
+// CURRENT stats
     // These are essential as we do not want to write anything to the variables of the actual ScriptableObjects
     // e.g changes to damage, health and movement speed due to skills should only exist CURRENTLY
-    float currentMoveSpeed;
-    float currentHealth;
-    float currentRecovery;
-    float currentMight;
-    float currentProjectileSpeed;
+        // Feel free to unhide any stat so we can see if recovery works outside of debug inspector
+    [HideInInspector]
+    public float currentMoveSpeed;
+    [HideInInspector]
+    public float currentHealth;
+    [HideInInspector]
+    public float currentRecovery;
+    [HideInInspector]
+    public float currentMight;
+    [HideInInspector]
+    public float currentProjectileSpeed;
+    [HideInInspector]
+    public float currentMagnet;
 
 
     // Player Exp and Levels
@@ -63,6 +81,7 @@ public class PlayerStats : MonoBehaviour
         currentRecovery = characterData.Recovery;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentMagnet = characterData.Magnet;
     }
     
 
@@ -86,6 +105,8 @@ public class PlayerStats : MonoBehaviour
         {
             isInvincible = false;
         }
+
+        Recover();
     }
 
     public void IncreaseExperience(int amount)
@@ -157,6 +178,23 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth < characterData.MaxHealth)
         {
             currentHealth += amount;
+
+            // If the health healed casuses current health to exceed the Max, set the health to Max
+            if(currentHealth > characterData.MaxHealth)
+            {
+                currentHealth = characterData.MaxHealth;
+            }
+
+        }
+        
+    }
+
+    public void Recover()
+    {
+        //Only causes heal if not at max heatlh
+        if(currentHealth < characterData.MaxHealth)
+        {
+            currentHealth += currentRecovery * Time.deltaTime;
 
             // If the health healed casuses current health to exceed the Max, set the health to Max
             if(currentHealth > characterData.MaxHealth)
