@@ -28,7 +28,7 @@ public class PlayerStats : MonoBehaviour
     public float currentHealth;
     [HideInInspector]
     public float currentRecovery;
-    [HideInInspector]
+    //[HideInInspector]
     public float currentMight;
     [HideInInspector]
     public float currentProjectileSpeed;
