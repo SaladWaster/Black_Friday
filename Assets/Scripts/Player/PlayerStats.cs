@@ -8,16 +8,6 @@ public class PlayerStats : MonoBehaviour
     public CharacterScriptableObject characterData;
 
 
-
-    // // CURRENT stats
-    // // These are essential as we do not want to write anything to the variables of the actual ScriptableObjects
-    // // e.g changes to damage, health and movement speed due to skills should only exist CURRENTLY
-    // float currentMoveSpeed;
-    // float currentHealth;
-    // float currentRecovery;
-    // float currentMight;
-    // float currentProjectileSpeed;
-
 // CURRENT stats
     // These are essential as we do not want to write anything to the variables of the actual ScriptableObjects
     // e.g changes to damage, health and movement speed due to skills should only exist CURRENTLY
@@ -60,11 +50,20 @@ public class PlayerStats : MonoBehaviour
         public int experienceCapIncrease;
     }
 
+
+    //Inventory Management
+
+    InventoryManager inventory;
+    public int weaponIndex;
+    public int passiveItemIndex;
+
     // SHADOW I-FRAMES????!!!
     [Header("I-Frames")]
     public float invincibilityDuration;
     float invincibilityTimer;
     bool isInvincible;
+
+
 
     // MAKE SURE WE ADD THE NECESSARY HEADERS ABOVE THE LISTS BELOW
     // e.g If I-Frames is below List<LevelRange> below, the invincibility Duration setting
@@ -75,6 +74,10 @@ public class PlayerStats : MonoBehaviour
    
     void Awake()
     {
+
+        // // Must call the inventory before spawning starter weapon
+        // inventory = GetComponent<InventoryManager>();
+
         // Calls the stat properties from the CharacterScriptableObject
         currentMoveSpeed = characterData.MoveSpeed;
         currentHealth = characterData.MaxHealth;

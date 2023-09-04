@@ -332,7 +332,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284272489}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1309e0a0b107cc46ae915c9a7df3965, type: 3}
   m_Name: 
@@ -3686,6 +3686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae9140898eef1d47a21136e5860211d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pullSpeed: 300
 --- !u!1 &2080937850
 GameObject:
   m_ObjectHideFlags: 0
@@ -3827,6 +3828,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6917734037760320764, guid: d1973cc8de9427a47886b0ed759fa513, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917734037760320764, guid: d1973cc8de9427a47886b0ed759fa513, type: 3}
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
@@ -3940,6 +3945,8 @@ MonoBehaviour:
   experience: 0
   level: 1
   experienceCap: 0
+  weaponIndex: 0
+  passiveItemIndex: 0
   invincibilityDuration: 0.5
   levelRanges:
   - startLevel: 1
@@ -4096,6 +4103,10 @@ PrefabInstance:
       propertyPath: enemyData
       value: 
       objectReference: {fileID: 11400000, guid: 0b9f9ae694579834dad8c5bbf21c18d3, type: 2}
+    - target: {fileID: 6357024698513360646, guid: d9c4235c8ba83aa44bbf8aff4117b7e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7519088899882281667, guid: d9c4235c8ba83aa44bbf8aff4117b7e5, type: 3}
       propertyPath: m_Name
       value: slime
