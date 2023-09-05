@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
 
-    public CharacterScriptableObject characterData;
+    // For loading the correct character (and their data) into the scene
+    CharacterScriptableObject characterData;
 
 
 // CURRENT stats
@@ -24,6 +25,9 @@ public class PlayerStats : MonoBehaviour
     public float currentProjectileSpeed;
     [HideInInspector]
     public float currentMagnet;
+
+    // // Starting Weapon
+    // public List<GameObject> spawnedWeapons;
 
 
     // Player Exp and Levels
@@ -51,11 +55,6 @@ public class PlayerStats : MonoBehaviour
     }
 
 
-    //Inventory Management
-
-    InventoryManager inventory;
-    public int weaponIndex;
-    public int passiveItemIndex;
 
     // SHADOW I-FRAMES????!!!
     [Header("I-Frames")]
@@ -71,12 +70,29 @@ public class PlayerStats : MonoBehaviour
 
 
     public List<LevelRange> levelRanges;
+
+    // Inventory Item slots
+    InventoryManager inventory;
+    public int weaponIndex;
+    public int passiveItemIndex;
+
+    // // Only use these to test weapon/passive spawns for multiple weapons (Check PlayerStats script to add)
+    public GameObject secondWeaponTest;
+
+    public GameObject firstPassiveItemTest, secondPassiveItemTest;
    
     void Awake()
     {
+        // Be sure to set characterData before the characterStats, 
+        // or it may cause a Null reference otherwise
+        // Now, the characterScriptableObject is automatically assigned to PlayerStats component of player when the button is clicked from the Menu scene 
+        // If starting from Game scene, be sure to assign it still
+        characterData = CharacterSelector.GetData();
+        CharacterSelector.instance.DestroySingleton();
 
-        // // Must call the inventory before spawning starter weapon
-        // inventory = GetComponent<InventoryManager>();
+        // Must call the inventory before spawning starter weapon (SpawnWeapon below),
+        // or it may cause a Null reference otherwise
+        inventory = GetComponent<InventoryManager>();
 
         // Calls the stat properties from the CharacterScriptableObject
         currentMoveSpeed = characterData.MoveSpeed;
@@ -85,6 +101,13 @@ public class PlayerStats : MonoBehaviour
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
         currentMagnet = characterData.Magnet;
+
+        // Spawning in the starter weapon
+        SpawnWeapon(characterData.StartingWeapon);
+        // // Only use this to test weapon spawns for multiple weapons
+        SpawnWeapon(secondWeaponTest);
+        SpawnPassiveItem(firstPassiveItemTest);
+        SpawnPassiveItem(secondPassiveItemTest);
     }
     
 
@@ -207,5 +230,61 @@ public class PlayerStats : MonoBehaviour
 
         }
         
+    }
+
+    public void SpawnWeapon(GameObject weapon)
+    {
+
+        // Checks for available slots, return if so
+        // -1 due to index 0 of array/list
+        if(weaponIndex >= inventory.weaponSlots.Count - 1)
+        {
+            Debug.LogError("Inventory slots already full");
+            return;
+        }
+
+        // Spawns the starter weapon
+        GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
+        // The SetParent method makes the weapon a child of the Player in the hierarchy
+        spawnedWeapon.transform.SetParent(transform);
+        // // Then, we add it to the list ( notice spawnedWeapon(s) )
+        // spawnedWeapons.Add(spawnedWeapon);
+
+        // Add weapon to its inventory slot
+        inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<AutoWepController>());
+
+        // Increment wep index, so each wep is assigned a diff slot
+        // We must increment only after adding the wep
+        // As the Array/List starts from index 0
+        weaponIndex++;
+
+    }
+
+    public void SpawnPassiveItem(GameObject passiveItem)
+    {
+
+        // Checks for available slots, return if so
+        // -1 due to index 0 of array/list
+        if(passiveItemIndex >= inventory.passiveItemSlots.Count - 1)
+        {
+            Debug.LogError("Inventory slots already full");
+            return;
+        }
+
+        // Spawns the starter weapon
+        GameObject spawnedPassiveItem = Instantiate(passiveItem, transform.position, Quaternion.identity);
+        // The SetParent method makes the weapon a child of the Player in the hierarchy
+        spawnedPassiveItem.transform.SetParent(transform);
+        // // Then, we add it to the list ( notice spawnedWeapon(s) )
+        // spawnedWeapons.Add(spawnedWeapon);
+
+        // Add weapon to its inventory slot
+        inventory.AddPassiveItem(passiveItemIndex, spawnedPassiveItem.GetComponent<PassiveItem>());
+
+        // Increment wep index, so each wep is assigned a diff slot
+        // We must increment only after adding the wep
+        // As the Array/List starts from index 0
+        passiveItemIndex++;
+
     }
 }

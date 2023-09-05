@@ -35,5 +35,12 @@ public class CharacterSelector : MonoBehaviour
     }
 
 
-
+    // This is essential to prevent memory leaks
+    // We must be careful when handling DontDestroyOnLoad objects
+    // Only necessary data is present and no unnecessary elements run in the background
+    public void DestroySingleton()
+    {
+        instance = null;
+        Destroy(gameObject);
+    }
 }
