@@ -26,6 +26,102 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector]
     public float currentMagnet;
 
+    // public float CurrentMoveSpeed
+    // {
+    //     get { return currentMoveSpeed ; }
+    //     // Whenever a new value is assigned to current health, the set block is executed
+    //     set
+    //     {
+    //         // Checks if value of currentHealth is changing/has changed
+    //         if(currentMoveSpeed != value)
+    //         {
+    //             currentMoveSpeed = value;
+    //             // Updates the real time value of the stat in the UI
+    //             // Add any additional logic to be executed when value changes
+    //         }
+    //     }
+    // }
+
+    // public float CurrentHealth
+    // {
+    //     get { return currentHealth ; }
+    //     // Whenever a new value is assigned to current health, the set block is executed
+    //     set
+    //     {
+    //         // Checks if value of currentHealth is changing/has changed
+    //         if(currentHealth != value)
+    //         {
+    //             currentHealth = value;
+    //             // Updates the real time value of the stat in the UI
+    //             // Add any additional logic to be executed when value changes
+    //         }
+    //     }
+    // }
+
+    // public float CurrentRecovery
+    // {
+    //     get { return currentRecovery ; }
+    //     // Whenever a new value is assigned to current health, the set block is executed
+    //     set
+    //     {
+    //         // Checks if value of currentHealth is changing/has changed
+    //         if(currentRecovery != value)
+    //         {
+    //             currentRecovery = value;
+    //             // Updates the real time value of the stat in the UI
+    //             // Add any additional logic to be executed when value changes
+    //         }
+    //     }
+    // }
+
+    // public float CurrentMight
+    // {
+    //     get { return currentMight ; }
+    //     // Whenever a new value is assigned to current health, the set block is executed
+    //     set
+    //     {
+    //         // Checks if value of currentHealth is changing/has changed
+    //         if(currentMight != value)
+    //         {
+    //             currentMight = value;
+    //             // Updates the real time value of the stat in the UI
+    //             // Add any additional logic to be executed when value changes
+    //         }
+    //     }
+    // }
+
+    // public float CurrentMagnet
+    // {
+    //     get { return currentMagnet ; }
+    //     // Whenever a new value is assigned to current health, the set block is executed
+    //     set
+    //     {
+    //         // Checks if value of currentHealth is changing/has changed
+    //         if(currentMagnet != value)
+    //         {
+    //             currentMagnet = value;
+    //             // Updates the real time value of the stat in the UI
+    //             // Add any additional logic to be executed when value changes
+    //         }
+    //     }
+    // }
+
+    // public float CurrentProjectileSpeed
+    // {
+    //     get { return currentProjectileSpeed ; }
+    //     // Whenever a new value is assigned to current health, the set block is executed
+    //     set
+    //     {
+    //         // Checks if value of currentHealth is changing/has changed
+    //         if(currentProjectileSpeed != value)
+    //         {
+    //             currentProjectileSpeed= value;
+    //             // Updates the real time value of the stat in the UI
+    //             // Add any additional logic to be executed when value changes
+    //         }
+    //     }
+    // }
+
     // // Starting Weapon
     // public List<GameObject> spawnedWeapons;
 
