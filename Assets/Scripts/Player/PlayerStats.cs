@@ -13,114 +13,143 @@ public class PlayerStats : MonoBehaviour
     // These are essential as we do not want to write anything to the variables of the actual ScriptableObjects
     // e.g changes to damage, health and movement speed due to skills should only exist CURRENTLY
         // Feel free to unhide any stat so we can see if recovery works outside of debug inspector
-    [HideInInspector]
-    public float currentMoveSpeed;
-    [HideInInspector]
-    public float currentHealth;
-    [HideInInspector]
-    public float currentRecovery;
-    //[HideInInspector]
-    public float currentMight;
-    [HideInInspector]
-    public float currentProjectileSpeed;
-    [HideInInspector]
-    public float currentMagnet;
+    float currentMoveSpeed;
+    float currentHealth;
+    float currentRecovery;
+    float currentMight;
+    float currentProjectileSpeed;
+    float currentMagnet;
 
-    // public float CurrentMoveSpeed
-    // {
-    //     get { return currentMoveSpeed ; }
-    //     // Whenever a new value is assigned to current health, the set block is executed
-    //     set
-    //     {
-    //         // Checks if value of currentHealth is changing/has changed
-    //         if(currentMoveSpeed != value)
-    //         {
-    //             currentMoveSpeed = value;
-    //             // Updates the real time value of the stat in the UI
-    //             // Add any additional logic to be executed when value changes
-    //         }
-    //     }
-    // }
+    // Using properites to check stats
+    #region  Current Stat Properties
+    public float CurrentMoveSpeed
+    {
+        get { return currentMoveSpeed ; }
+        // Whenever a new value is assigned to current health, the set block is executed
+        set
+        {
+            // Checks if value of currentHealth is changing/has changed
+            if(currentMoveSpeed != value)
+            {
+                currentMoveSpeed = value;
 
-    // public float CurrentHealth
-    // {
-    //     get { return currentHealth ; }
-    //     // Whenever a new value is assigned to current health, the set block is executed
-    //     set
-    //     {
-    //         // Checks if value of currentHealth is changing/has changed
-    //         if(currentHealth != value)
-    //         {
-    //             currentHealth = value;
-    //             // Updates the real time value of the stat in the UI
-    //             // Add any additional logic to be executed when value changes
-    //         }
-    //     }
-    // }
+                if(GameManager.instance != null)
+                {
+                    GameManager.instance.currentMoveSpeedDisplay.text = "Move Speed: " + currentMoveSpeed;
+                }
 
-    // public float CurrentRecovery
-    // {
-    //     get { return currentRecovery ; }
-    //     // Whenever a new value is assigned to current health, the set block is executed
-    //     set
-    //     {
-    //         // Checks if value of currentHealth is changing/has changed
-    //         if(currentRecovery != value)
-    //         {
-    //             currentRecovery = value;
-    //             // Updates the real time value of the stat in the UI
-    //             // Add any additional logic to be executed when value changes
-    //         }
-    //     }
-    // }
+                // Updates the real time value of the stat in the UI
+                // Add any additional logic to be executed when value changes
+            }
+        }
+    }
 
-    // public float CurrentMight
-    // {
-    //     get { return currentMight ; }
-    //     // Whenever a new value is assigned to current health, the set block is executed
-    //     set
-    //     {
-    //         // Checks if value of currentHealth is changing/has changed
-    //         if(currentMight != value)
-    //         {
-    //             currentMight = value;
-    //             // Updates the real time value of the stat in the UI
-    //             // Add any additional logic to be executed when value changes
-    //         }
-    //     }
-    // }
+    public float CurrentHealth
+    {
+        get { return currentHealth ; }
+        // Whenever a new value is assigned to current health, the set block is executed
+        set
+        {
+            // Checks if value of currentHealth is changing/has changed
+            if(currentHealth != value)
+            {
+                currentHealth = value;
 
-    // public float CurrentMagnet
-    // {
-    //     get { return currentMagnet ; }
-    //     // Whenever a new value is assigned to current health, the set block is executed
-    //     set
-    //     {
-    //         // Checks if value of currentHealth is changing/has changed
-    //         if(currentMagnet != value)
-    //         {
-    //             currentMagnet = value;
-    //             // Updates the real time value of the stat in the UI
-    //             // Add any additional logic to be executed when value changes
-    //         }
-    //     }
-    // }
+                if(GameManager.instance != null)
+                {
+                    GameManager.instance.currentHealthDisplay.text = "Health: " + currentHealth;
+                }
+                // Updates the real time value of the stat in the UI
+                // Add any additional logic to be executed when value changes
+            }
+        }
+    }
 
-    // public float CurrentProjectileSpeed
-    // {
-    //     get { return currentProjectileSpeed ; }
-    //     // Whenever a new value is assigned to current health, the set block is executed
-    //     set
-    //     {
-    //         // Checks if value of currentHealth is changing/has changed
-    //         if(currentProjectileSpeed != value)
-    //         {
-    //             currentProjectileSpeed= value;
-    //             // Updates the real time value of the stat in the UI
-    //             // Add any additional logic to be executed when value changes
-    //         }
-    //     }
-    // }
+    public float CurrentRecovery
+    {
+        get { return currentRecovery ; }
+        // Whenever a new value is assigned to current health, the set block is executed
+        set
+        {
+            // Checks if value of currentHealth is changing/has changed
+            if(currentRecovery != value)
+            {
+                currentRecovery = value;
+
+                if(GameManager.instance != null)
+                {
+                    GameManager.instance.currentRecoveryDisplay.text = "Recovery: " + currentRecovery;
+                }
+                // Updates the real time value of the stat in the UI
+                // Add any additional logic to be executed when value changes
+            }
+        }
+    }
+
+    public float CurrentMight
+    {
+        get { return currentMight ; }
+        // Whenever a new value is assigned to current health, the set block is executed
+        set
+        {
+            // Checks if value of currentHealth is changing/has changed
+            if(currentMight != value)
+            {
+                currentMight = value;
+
+                if(GameManager.instance != null)
+                {
+                    GameManager.instance.currentMightDisplay.text = "Might: " + currentMight;
+                }
+                // Updates the real time value of the stat in the UI
+                // Add any additional logic to be executed when value changes
+            }
+        }
+    }
+
+    public float CurrentMagnet
+    {
+        get { return currentMagnet ; }
+        // Whenever a new value is assigned to current health, the set block is executed
+        set
+        {
+            // Checks if value of currentHealth is changing/has changed
+            if(currentMagnet != value)
+            {
+                currentMagnet = value;
+
+                if(GameManager.instance != null)
+                {
+                    GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet;
+                }
+                // Updates the real time value of the stat in the UI
+                // Add any additional logic to be executed when value changes
+            }
+        }
+    }
+
+    public float CurrentProjectileSpeed
+    {
+        get { return currentProjectileSpeed ; }
+        // Whenever a new value is assigned to current health, the set block is executed
+        set
+        {
+            // Checks if value of currentHealth is changing/has changed
+            if(currentProjectileSpeed != value)
+            {
+                currentProjectileSpeed= value;
+
+                if(GameManager.instance != null)
+                {
+                    GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: " + currentProjectileSpeed;
+                }
+                // Updates the real time value of the stat in the UI
+                // Add any additional logic to be executed when value changes
+            }
+        }
+    }
+
+    #endregion
 
     // // Starting Weapon
     // public List<GameObject> spawnedWeapons;
@@ -191,12 +220,12 @@ public class PlayerStats : MonoBehaviour
         inventory = GetComponent<InventoryManager>();
 
         // Calls the stat properties from the CharacterScriptableObject
-        currentMoveSpeed = characterData.MoveSpeed;
-        currentHealth = characterData.MaxHealth;
-        currentRecovery = characterData.Recovery;
-        currentMight = characterData.Might;
-        currentProjectileSpeed = characterData.ProjectileSpeed;
-        currentMagnet = characterData.Magnet;
+        CurrentMoveSpeed = characterData.MoveSpeed;
+        CurrentHealth = characterData.MaxHealth;
+        CurrentRecovery = characterData.Recovery;
+        CurrentMight = characterData.Might;
+        CurrentProjectileSpeed = characterData.ProjectileSpeed;
+        CurrentMagnet = characterData.Magnet;
 
         // Spawning in the starter weapon
         SpawnWeapon(characterData.StartingWeapon);
@@ -212,6 +241,14 @@ public class PlayerStats : MonoBehaviour
         // Initialising exp cap
         // Starts player off with 0 exp cap, allowing them to level up immediately when they gain exp
         experienceCap = levelRanges[0].experienceCapIncrease;
+
+
+        GameManager.instance.currentMoveSpeedDisplay.text = "Move Speed: " + currentMoveSpeed;
+        GameManager.instance.currentHealthDisplay.text = "Health: " + currentHealth;
+        GameManager.instance.currentRecoveryDisplay.text = "Recovery: " + currentRecovery;
+        GameManager.instance.currentMightDisplay.text = "Might: " + currentMight;
+        GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet;
+        GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: " + currentProjectileSpeed;
     }
 
     // Repeatedly check invincibility timer
@@ -262,6 +299,9 @@ public class PlayerStats : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+
+            // Enable level up screen on level up
+            GameManager.instance.StartLevelUp();
         }
     }
 
@@ -271,12 +311,12 @@ public class PlayerStats : MonoBehaviour
         // If player is not invincible, take damage and gain i-frames
         if(!isInvincible)
         {
-            currentHealth -= dmg;
+            CurrentHealth -= dmg;
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
 
-            if(currentHealth <= 0)
+            if(CurrentHealth <= 0)
             {
                 Defeated();
             }
@@ -289,6 +329,11 @@ public class PlayerStats : MonoBehaviour
     {
         //Destroy(gameObject);
         Debug.Log("Oooofff!!!");
+
+        if(!GameManager.instance.isGameOver)
+        {
+            GameManager.instance.GameOver();
+        }
     }
 
     ///// ***STAT INCREASES DUE TO ITEM PICK-UPS HERE BELOW*** /////
@@ -297,14 +342,14 @@ public class PlayerStats : MonoBehaviour
     public void RestoreHealth(float amount)
     {
         //Only causes heal if not at max heatlh
-        if(currentHealth < characterData.MaxHealth)
+        if(CurrentHealth < characterData.MaxHealth)
         {
-            currentHealth += amount;
+            CurrentHealth += amount;
 
             // If the health healed casuses current health to exceed the Max, set the health to Max
-            if(currentHealth > characterData.MaxHealth)
+            if(CurrentHealth > characterData.MaxHealth)
             {
-                currentHealth = characterData.MaxHealth;
+                CurrentHealth = characterData.MaxHealth;
             }
 
         }
@@ -314,14 +359,14 @@ public class PlayerStats : MonoBehaviour
     public void Recover()
     {
         //Only causes heal if not at max heatlh
-        if(currentHealth < characterData.MaxHealth)
+        if(CurrentHealth < characterData.MaxHealth)
         {
-            currentHealth += currentRecovery * Time.deltaTime;
+            CurrentHealth += CurrentRecovery * Time.deltaTime;
 
             // If the health healed casuses current health to exceed the Max, set the health to Max
-            if(currentHealth > characterData.MaxHealth)
+            if(CurrentHealth > characterData.MaxHealth)
             {
-                currentHealth = characterData.MaxHealth;
+                CurrentHealth = characterData.MaxHealth;
             }
 
         }

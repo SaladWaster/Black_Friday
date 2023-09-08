@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
+    public static GameManager instance;
 
     // Defining the stats of the game
     // Start with Caps/Upper case when naming Enums
@@ -11,7 +14,8 @@ public class GameManager : MonoBehaviour
     {
         Gameplay,
         Paused,
-        GameOver
+        GameOver,
+        LevelUp
     }
 
     // Stores current game state
@@ -22,9 +26,39 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     public GameObject pauseScreen;
+    public GameObject resultsScreen;
+    public GameObject levelUpScreen;
+
+    [Header("Current Stat Displays")]
+    public Text currentHealthDisplay;
+    public Text currentRecoveryDisplay;
+    public Text currentMoveSpeedDisplay;
+    public Text currentMightDisplay;
+    public Text currentProjectileSpeedDisplay;
+    public Text currentMagnetDisplay;
+
+    [Header("Stopwatch")]
+    public float timeLimit; // Time in seconds
+    float stopwatchTime;
+    public Text stopwatchDisplay;
+
+    public bool isGameOver = false;
+
+    public bool choosingUpgrade;
 
     void Awake()
     {
+        // Warning to see if there is another singleton of this kind in game
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("EXTRA" + this + "Deleted");
+        }
+
+
         DisableScreens();
     }
 
@@ -41,6 +75,7 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Gameplay:
                 CheckForPauseAndResume();
+                UpdateStopwatch();
                 break;
 
             case GameState.Paused:
@@ -48,6 +83,25 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.GameOver:
+
+                if(!isGameOver)
+                {
+                    isGameOver = true;
+                    Time.timeScale = 0f; // Stop game completely
+                    Debug.Log("Game over!");
+                    DisplayResults();
+                }
+                break;
+
+            case GameState.LevelUp:
+
+                if(!choosingUpgrade)
+                {
+                    choosingUpgrade = true;
+                    Time.timeScale = 0f; // Stop game completely
+                    Debug.Log("Choosing Upgrade!");
+                    levelUpScreen.SetActive(true);
+                }
                 break;
             
             // error handling block for troubleshooting, should game reach an invalid state
@@ -112,8 +166,53 @@ public class GameManager : MonoBehaviour
     void DisableScreens()
     {
         pauseScreen.SetActive(false);
+        resultsScreen.SetActive(false);
+        levelUpScreen.SetActive(false);
     }
 
+    public void GameOver()
+    {
+        ChangeState(GameState.GameOver);
+    }
+
+    public void DisplayResults()
+    {
+        //resultsScreen.SetActive(true);
+    }
+
+    void UpdateStopwatch()
+    {
+        stopwatchTime += Time.deltaTime;
+
+        UpdateStopwatchDisplay();
+
+        if(stopwatchTime >= timeLimit)
+        {
+            GameOver();
+        }
+    }
+
+    void UpdateStopwatchDisplay()
+    {
+        int minutes = Mathf.FloorToInt(stopwatchTime/60);
+        int seconds = Mathf.FloorToInt(stopwatchTime%60);   // Modulo obtains the seconds remainder
+
+        stopwatchDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void StartLevelUp()
+    {
+        ChangeState(GameState.LevelUp);
+    }
+
+    public void EndLevelUp()
+    {
+        choosingUpgrade = false;
+        Time.timeScale = 1f;
+        levelUpScreen.SetActive(false);
+        ChangeState(GameState.Gameplay);
+    }
+    
     // // Test function
     // // An enum is a set of named integer constants
     // // thus, incrementing/decrementing works
