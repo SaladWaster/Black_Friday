@@ -21,7 +21,7 @@ public class ProjectileWepBehaviour : MonoBehaviour
     protected float currentCooldownDuration;
     protected int currentPierce;
 
-    void Awake()
+    protected virtual void Awake()
     {
         //Assign current stats to be the values of the ones set in the scriptable object upon awakening
         currentDamage = weaponData.Damage;
