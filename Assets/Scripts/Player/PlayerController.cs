@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
         if (count == 0)
         {
             //transform.Translate(movement * Time.deltaTime * characterData.MoveSpeed);
-            transform.Translate(movement * Time.deltaTime * player.currentMoveSpeed);
+            transform.Translate(movement * Time.deltaTime * player.CurrentMoveSpeed);
             return; // If no collisions, move the player and exit from the function
         }
         // If we hit something, try moving in the x direction
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
         if (count == 0)
         {
             // transform.Translate(new Vector2(movement.x, 0) * Time.deltaTime * characterData.MoveSpeed);
-            transform.Translate(new Vector2(movement.x, 0) * Time.deltaTime * player.currentMoveSpeed);
+            transform.Translate(new Vector2(movement.x, 0) * Time.deltaTime * player.CurrentMoveSpeed);
             return; // If no collisions in current X direction, move the player and exit from the function
         }
         // If we hit something, try moving in the y direction
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
         if (count == 0)
         {
             // transform.Translate(new Vector2(0, movement.y) * Time.deltaTime * characterData.MoveSpeed);
-            transform.Translate(new Vector2(0, movement.y) * Time.deltaTime * player.currentMoveSpeed);
+            transform.Translate(new Vector2(0, movement.y) * Time.deltaTime * player.CurrentMoveSpeed);
             return; // If no collisions in current Y direction, move the player and exit from the function
         }
 
@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
             castCollisions, // List of collisions
             // moveSpeed * Time.deltaTime *2 + collisionOffset // The distance to cast i.e. movement plus a small offset
             //characterData.MoveSpeed * Time.deltaTime *2 + collisionOffset // The distance to cast i.e. movement plus a small offset
-            player.currentMoveSpeed * Time.deltaTime *2 + collisionOffset // The distance to cast i.e. movement plus a small offset
+            player.CurrentMoveSpeed * Time.deltaTime *2 + collisionOffset // The distance to cast i.e. movement plus a small offset
 
 
         );
@@ -134,6 +134,12 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue movementValue)
     {
+
+        if(GameManager.instance.isGameOver)
+        {
+            return;
+        }
+
         animator.SetBool("isMoving", true);
         movement = movementValue.Get<Vector2>();
 
@@ -164,6 +170,10 @@ public class PlayerController : MonoBehaviour
 
     void OnFire()
     {
+        if(GameManager.instance.isGameOver)
+        {
+            return;
+        }
         animator.SetTrigger("attack");
     }
 

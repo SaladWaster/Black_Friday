@@ -9,6 +9,6 @@ public class WingsPassiveItem : PassiveItem
         // Multiplies current stat by ( 1 + Fraction)
         // 1 is the default
         // e.g Multiplier of 10, 10/100 is 10% or 0.1
-        player.currentMoveSpeed *= 1 + passiveItemData.Multiplier / 100f;
+        player.CurrentMoveSpeed *= 1 + passiveItemData.Multiplier / 100f;
     }
 }

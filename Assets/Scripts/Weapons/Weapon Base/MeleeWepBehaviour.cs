@@ -33,7 +33,7 @@ public class MeleeWepBehaviour : MonoBehaviour
     // Repalce currentDamage with this function GetCurrentDamage()
     public float GetCurrentDamage()
     {
-        return currentDamage *= FindObjectOfType<PlayerStats>().currentMight;
+        return currentDamage *= FindObjectOfType<PlayerStats>().CurrentMight;
     }
 
 
