@@ -15,4 +15,6 @@ MonoBehaviour:
   multiplier: 100
   level: 1
   nextLevelPrefab: {fileID: 8184785903739824900, guid: c3fbcc9dc73a59c42b28dfe2bdcfc8bb, type: 3}
+  name: Spinach
+  description: Increases damage by 100%
   icon: {fileID: -1435198918, guid: f745b464532570144b0448eeadb1281b, type: 3}

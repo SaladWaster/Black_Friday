@@ -15,4 +15,6 @@ MonoBehaviour:
   multiplier: 200
   level: 2
   nextLevelPrefab: {fileID: 0}
+  name: Spinach Level 2
+  description: Increases damage by 200%
   icon: {fileID: 1476365434, guid: f745b464532570144b0448eeadb1281b, type: 3}

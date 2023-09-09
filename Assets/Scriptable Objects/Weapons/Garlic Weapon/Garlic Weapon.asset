@@ -19,4 +19,6 @@ MonoBehaviour:
   pierce: 0
   level: 1
   nextLevelPrefab: {fileID: 4366987857838747797, guid: c8ebcf643d09728458ea91ad83d10638, type: 3}
+  name: Garlic Weapon
+  description: Deals damage to enemies in radius
   icon: {fileID: -511839372, guid: f745b464532570144b0448eeadb1281b, type: 3}
