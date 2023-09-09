@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
+    Transform player;
+    public float despawnDistance;
+
 
     // CURRENT stats
     // These are essential as we do not want to write anything to the variables of the actual ScriptableObjects
@@ -24,6 +27,19 @@ public class EnemyStats : MonoBehaviour
         currentMoveSpeed = enemyData.MoveSpeed;
         currentHealth = enemyData.MaxHealth;
         currentDamage = enemyData.Damage;
+    }
+
+    void Start()
+    {
+        player = FindObjectOfType<PlayerStats>().transform;
+    }
+    
+    void Update()
+    {
+        if(Vector2.Distance(transform.position, player.position)>=despawnDistance)
+        {
+            ReturnEnemy();
+        }
     }
 
     public void TakeDamage(float dmg)
@@ -58,6 +74,22 @@ public class EnemyStats : MonoBehaviour
             player.TakeDamage(currentDamage); // Use current damage, as we may add damage modifiers later, rather than weapondata.damage
         }
     }
+
+    private void OnDestroy()
+    {
+        EnemySpawner st = FindObjectOfType<EnemySpawner>();
+        st.OnEnemyDefeated();
+
+    }
+
+    void ReturnEnemy()
+    {
+        // Remove the unnecessary line that references relativeSpawnPoints
+        EnemySpawner st = FindObjectOfType<EnemySpawner>();
+        
+        transform.position = player.position + st.relativeSpawnPoints[Random.Range(0, st.relativeSpawnPoints.Count)].position;
+    }
+
     
     
 }

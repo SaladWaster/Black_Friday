@@ -12,78 +12,99 @@ public class MapController : MonoBehaviour
 //     public List<GameObject> terrainChunks;
 //     public GameObject player;
 //     public float checkerRadius;
-//     Vector3 noTerrainPosition;
 //     public LayerMask terrainMask;
+//     public GameObject currentChunk;
+// Vector3 playerLastPosition;
 
-//     // PlayerMovement pm;
-//     // This is actually the PlayerController script atm, as we use that script for PlayerMovement
-//     // This is similarly used in AutoWepController script
-//     // We may revisit this at a later time and readjust this
-//     PlayerController pm;
+// [Header("Optimisation")]
+// public List<GameObject> spawnedChunks;
+// GameObject latestChunk;
+// public float maxOpDist; // Must be greater than length and width of tilemap
+// float OpDist;
+// float optimiserCooldown;
+// public float optimiserCooldownDur;
+
+
 
 
 //     // Start is called before the first frame update
 //     void Start()
 //     {
-//         pm = FindObjectOfType<PlayerController>();
+//         playerLastPosition = player.transform.position;
 //     }
 
 //     // Update is called once per frame
 //     void Update()
 //     {
 //         ChunkChecker();
+//         ChunkOptimiser();
 //     }
 
 //     void ChunkChecker()
 //     {
-//         if(pm.moveDir.x > 0 && pm.moveDir.y == 0)   // right
-//         {
-//             // we use Physics2D OverlapCircle to check if ther is a chunk a dist. away from our player
-//             // We do not want to spawn chunks continuously, only in areas without a chunk
-//             if((!Physics2D.OverlapCircle(player.transform.position + new Vector3(20, 0, 0)), checkerRadius, terrainMask))
-//             {
-//                 noTerrainPosition = player.transform.position + new Vector3(20, 0, 0);
-//                 SpawnChunk();
-//             }
-//         }
+//         if(!currentChunk)
+//          {
+//              return;
+//          }
 
-//         if(pm.moveDir.x < 0 && pm.moveDir.y == 0)   // left
-//         {
-//             // we use Physics2D OverlapCircle to check if ther is a chunk a dist. away from our player
-//             // We do not want to spawn chunks continuously, only in areas without a chunk
-//             if((!Physics2D.OverlapCircle(player.transform.position + new Vector3(-20, 0, 0)), checkerRadius, terrainMask))
-//             {
-//                 noTerrainPosition = player.transform.position + new Vector3(-20, 0, 0);
-//                 SpawnChunk();
-//             }
-//         }
+            // Vector3 moveDir = player.transform.position - playerLastPosition;
+            // playerLastPosition = player.transform.position;
 
-//         if(pm.moveDir.x == 0 && pm.moveDir.y > 0)   // up
+//     }
+
+// string GetDirectionName(Vector3 direction)
+// {
+//     direction = direction.normalized;
+
+//     // obtain magnitude of vector
+//     if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+//     {
+//         // More horizontal than vertical
+//         if(direction.y > 0.5f)
 //         {
-//             // we use Physics2D OverlapCircle to check if ther is a chunk a dist. away from our player
-//             // We do not want to spawn chunks continuously, only in areas without a chunk
-//             if((!Physics2D.OverlapCircle(player.transform.position + new Vector3(0, 20, 0)), checkerRadius, terrainMask))
-//             {
-//                 noTerrainPosition = player.transform.position + new Vector3(0, 20, 0);
-//                 SpawnChunk();
-//             }
+//             return direction.x > 0 ? "Right Up" : "Left Up";
 //         }
-        
-//         if(pm.moveDir.x == 0 && pm.moveDir.y < 0)   // down
+//         else if (direction.y < -0.5f)
 //         {
-//             // we use Physics2D OverlapCircle to check if ther is a chunk a dist. away from our player
-//             // We do not want to spawn chunks continuously, only in areas without a chunk
-//             if((!Physics2D.OverlapCircle(player.transform.position + new Vector3(0, -20, 0)), checkerRadius, terrainMask))
-//             {
-//                 noTerrainPosition = player.transform.position + new Vector3(0, -20, 0);
-//                 SpawnChunk();
-//             }
+//             return direction.x > 0 ? "Right Down" : "Left Down";
+//         }
+//         else
+//         {
+//             return direction.x > 0 ? "Right" : "Left";
+//         }
+//     }
+//     else
+//     {
+//         //  More vertical than horizontal
+//         if(direction.x > 0.5f)
+//         {
+//             return direction.y > 0 ? "Right Up" : "Right Down";
+//         }
+//         else if (direction.x < -0.5f)
+//         {   
+//             return direction.y > 0 ? "Left Up" : "Left Down";
+//         }
+//         else
+//         {
+//             return direction.y > 0 ? "Up" : "Down";
 //         }
 //     }
 
-//     void SpawnChunk()
+//     }
+// }
+
+//     void SpawnChunk(Vector3 spawnPosition)
 //     {
 //         int rand = Random.Range(0, terrainChunks.Count);
-//         Instantiate(terrainChunks[rand], noTerrainPosition, Quaternion.identity);
+//         latestChunk = Instantiate(terrainChunks[rand], spawnPosition, Quaternion.identity);
+//         spawnedChunks.Add(latestChunk);
 //     }
+
+    // void ChunkOptimiser()
+    // {
+    //     optimiserCooldown -= Time.deltaTime;
+    // }
+
+
+
 }

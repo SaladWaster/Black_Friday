@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
 
     public void DisplayResults()
     {
-        //resultsScreen.SetActive(true);
+        resultsScreen.SetActive(true);
     }
 
     void UpdateStopwatch()

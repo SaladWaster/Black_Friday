@@ -148,7 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc417f58b7ec0b941aa488e93cb46658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 0}
 --- !u!114 &1255592840827622502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +161,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 0b9f9ae694579834dad8c5bbf21c18d3, type: 2}
+  despawnDistance: 20
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
 --- !u!114 &-6809044510981986061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,4 +180,4 @@ MonoBehaviour:
   drops:
   - name: Blue gem
     itempPrefab: {fileID: 5828225064562824391, guid: 7b0efe5d1772ff04285e9188f17b5890, type: 3}
-    dropRate: 50
+    dropRate: 100
