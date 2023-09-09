@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     public GameObject resultsScreen;
     public GameObject levelUpScreen;
 
+
+
     [Header("Current Stat Displays")]
     public Text currentHealthDisplay;
     public Text currentRecoveryDisplay;
@@ -37,14 +39,23 @@ public class GameManager : MonoBehaviour
     public Text currentProjectileSpeedDisplay;
     public Text currentMagnetDisplay;
 
+
+
     [Header("Stopwatch")]
     public float timeLimit; // Time in seconds
     float stopwatchTime;
     public Text stopwatchDisplay;
 
+
+
     public bool isGameOver = false;
 
+    // Flag to check if player is upgrading
     public bool choosingUpgrade;
+
+    // Reference player's game object
+    public GameObject playerObject;
+
 
     void Awake()
     {
@@ -203,6 +214,7 @@ public class GameManager : MonoBehaviour
     public void StartLevelUp()
     {
         ChangeState(GameState.LevelUp);
+        playerObject.SendMessage("RemoveAndApplyUpgrades");
     }
 
     public void EndLevelUp()

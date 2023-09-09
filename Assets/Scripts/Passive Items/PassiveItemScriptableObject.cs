@@ -19,6 +19,15 @@ public class PassiveItemScriptableObject : ScriptableObject
     GameObject nextLevelPrefab;  // Prefab of wep's next level/stage (What it evolves into)
     public GameObject NextLevelPrefab{ get => nextLevelPrefab; private set => nextLevelPrefab = value; }
 
+    [SerializeField]
+    new string name;
+    public string Name{ get => name; private set => name = value; }
+
+    [SerializeField]
+    string description;     // Passive Item Description (+Upgrades)
+    public string Description{ get => description; private set => description = value; }
+
+
     // We use a Sprite instead of image as we will be changing the
     // image.sprite property, not the image itself
     [SerializeField]

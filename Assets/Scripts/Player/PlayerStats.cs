@@ -230,9 +230,9 @@ public class PlayerStats : MonoBehaviour
         // Spawning in the starter weapon
         SpawnWeapon(characterData.StartingWeapon);
         // // Only use this to test weapon spawns for multiple weapons
-        SpawnWeapon(secondWeaponTest);
-        SpawnPassiveItem(firstPassiveItemTest);
-        SpawnPassiveItem(secondPassiveItemTest);
+        // SpawnWeapon(secondWeaponTest);
+        // SpawnPassiveItem(firstPassiveItemTest);
+        // SpawnPassiveItem(secondPassiveItemTest);
     }
     
 
