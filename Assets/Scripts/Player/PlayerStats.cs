@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -187,6 +188,11 @@ public class PlayerStats : MonoBehaviour
     float invincibilityTimer;
     bool isInvincible;
 
+    [Header("UI")]
+    public Image healthBar;
+    public Image expBar;
+    public Text levelText;
+
 
 
     // MAKE SURE WE ADD THE NECESSARY HEADERS ABOVE THE LISTS BELOW
@@ -249,6 +255,10 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.currentMightDisplay.text = "Might: " + currentMight;
         GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet;
         GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: " + currentProjectileSpeed;
+    
+        UpdateHealthBar();
+        UpdateExpBar();
+        UpdateLevelText();
     }
 
     // Repeatedly check invincibility timer
@@ -273,6 +283,8 @@ public class PlayerStats : MonoBehaviour
         experience += amount;
 
         LevelUpChecker();
+
+        UpdateExpBar();
     }
 
     void LevelUpChecker()
@@ -300,9 +312,22 @@ public class PlayerStats : MonoBehaviour
             }
             experienceCap += experienceCapIncrease;
 
+            UpdateLevelText();
+
             // Enable level up screen on level up
             GameManager.instance.StartLevelUp();
         }
+    }
+
+    void UpdateExpBar()
+    {
+        // float allows decimals when filling exp bar
+        expBar.fillAmount = (float)experience / experienceCap;
+    }
+
+    void UpdateLevelText()
+    {
+        levelText.text = "LV: " + level.ToString();
     }
 
 
@@ -320,9 +345,16 @@ public class PlayerStats : MonoBehaviour
             {
                 Defeated();
             }
+
+            UpdateHealthBar();
         }
 
         
+    }
+
+    void UpdateHealthBar()
+    {
+        healthBar.fillAmount = currentHealth / characterData.MaxHealth;
     }
 
     public void Defeated()
@@ -341,7 +373,7 @@ public class PlayerStats : MonoBehaviour
 
     public void RestoreHealth(float amount)
     {
-        //Only causes heal if not at max heatlh
+        //Only causes heal if not at max health
         if(CurrentHealth < characterData.MaxHealth)
         {
             CurrentHealth += amount;
@@ -358,7 +390,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Recover()
     {
-        //Only causes heal if not at max heatlh
+        //Only causes heal if not at max healyh
         if(CurrentHealth < characterData.MaxHealth)
         {
             CurrentHealth += CurrentRecovery * Time.deltaTime;
