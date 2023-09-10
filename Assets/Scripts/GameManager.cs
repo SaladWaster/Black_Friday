@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,19 +33,19 @@ public class GameManager : MonoBehaviour
 
 
     [Header("Current Stat Displays")]
-    public Text currentHealthDisplay;
-    public Text currentRecoveryDisplay;
-    public Text currentMoveSpeedDisplay;
-    public Text currentMightDisplay;
-    public Text currentProjectileSpeedDisplay;
-    public Text currentMagnetDisplay;
+    public TMP_Text currentHealthDisplay;
+    public TMP_Text currentRecoveryDisplay;
+    public TMP_Text currentMoveSpeedDisplay;
+    public TMP_Text currentMightDisplay;
+    public TMP_Text currentProjectileSpeedDisplay;
+    public TMP_Text currentMagnetDisplay;
 
 
 
     [Header("Stopwatch")]
     public float timeLimit; // Time in seconds
     float stopwatchTime;
-    public Text stopwatchDisplay;
+    public TMP_Text stopwatchDisplay;
 
 
 
@@ -199,7 +200,9 @@ public class GameManager : MonoBehaviour
 
         if(stopwatchTime >= timeLimit)
         {
-            GameOver();
+            // Call the Defeated method from PlayerStats
+            // Instead of directly calling GameOver
+            playerObject.SendMessage("Defeated");
         }
     }
 
