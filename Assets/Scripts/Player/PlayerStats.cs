@@ -391,7 +391,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Recover()
     {
-        //Only causes heal if not at max healyh
+        //Only causes heal if not at max health
         if(CurrentHealth < characterData.MaxHealth)
         {
             CurrentHealth += CurrentRecovery * Time.deltaTime;

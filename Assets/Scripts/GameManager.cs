@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
 
 
 
+
+
     [Header("Stopwatch")]
     public float timeLimit; // Time in seconds
     float stopwatchTime;
