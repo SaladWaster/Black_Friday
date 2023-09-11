@@ -7,7 +7,7 @@ public class PickUp : MonoBehaviour, ICollectable
 
     protected bool hasBeenCollected = false;
 
-    public  virtual void Collect()
+    public virtual void Collect()
     {
         hasBeenCollected = true;
     }
@@ -17,6 +17,7 @@ public class PickUp : MonoBehaviour, ICollectable
         // If the exp gem collides with a hitbox under a "Player"
         if(col.CompareTag("Player"))
         {
+            Collect();
             // Destroy on pick-up to prevent multiple pick-ups
             Destroy(gameObject);
         }

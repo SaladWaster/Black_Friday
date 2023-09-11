@@ -163,6 +163,8 @@ public class PlayerStats : MonoBehaviour
     public int level = 1;
     public int experienceCap;
 
+    public int levelCap = 9;
+
 
 
     // Nested class (Class within another class)
@@ -281,11 +283,18 @@ public class PlayerStats : MonoBehaviour
 
     public void IncreaseExperience(int amount)
     {
+        if(level >= levelCap)
+        {
+            return;
+        } 
+
         experience += amount;
 
         LevelUpChecker();
 
         UpdateExpBar();
+
+
     }
 
     void LevelUpChecker()

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c0130b9336bb04281f91a308c1689f, type: 3}
   m_Name: WiizardHat Passive Item
   m_EditorClassIdentifier: 
-  multiplier: 70
+  multiplier: 1
   level: 1
   nextLevelPrefab: {fileID: 0}
   name: Wizard Hat
-  description: Increase your projectile travel speeds by 10%
+  description: Regenerates 1% of max health every second.
   icon: {fileID: 1568025392, guid: f745b464532570144b0448eeadb1281b, type: 3}

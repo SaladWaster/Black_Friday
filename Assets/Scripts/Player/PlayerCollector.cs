@@ -39,7 +39,7 @@ public class PlayerCollector : MonoBehaviour
             rb.AddForce(forceDirection * pullSpeed);
 
             // If yes, call Collect method
-            collectable.Collect();
+            //collectable.Collect();
         }
     }
 

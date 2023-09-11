@@ -870,7 +870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &175275494
 Transform:
   m_ObjectHideFlags: 0
@@ -21284,7 +21284,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.75
 --- !u!114 &1957070974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22350,11 +22350,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b728310620fd8cc4eb5f0a8466a0e6f9, type: 2}
     - target: {fileID: 4889585417784521982, guid: d1973cc8de9427a47886b0ed759fa513, type: 3}
       propertyPath: m_Size.x
-      value: 0.95198005
+      value: 0.87799805
       objectReference: {fileID: 0}
     - target: {fileID: 4889585417784521982, guid: d1973cc8de9427a47886b0ed759fa513, type: 3}
       propertyPath: m_Size.y
-      value: 1.5649165
+      value: 1.0470421
       objectReference: {fileID: 0}
     - target: {fileID: 4889585417784521982, guid: d1973cc8de9427a47886b0ed759fa513, type: 3}
       propertyPath: m_Enabled
@@ -22362,11 +22362,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4889585417784521982, guid: d1973cc8de9427a47886b0ed759fa513, type: 3}
       propertyPath: m_Offset.x
-      value: 0.08495131
+      value: 0.04796031
       objectReference: {fileID: 0}
     - target: {fileID: 4889585417784521982, guid: d1973cc8de9427a47886b0ed759fa513, type: 3}
       propertyPath: m_Offset.y
-      value: -0.96210533
+      value: -0.12980732
       objectReference: {fileID: 0}
     - target: {fileID: 6361049084247662301, guid: d1973cc8de9427a47886b0ed759fa513, type: 3}
       propertyPath: m_SortingLayer
@@ -22495,6 +22495,7 @@ MonoBehaviour:
   experience: 0
   level: 1
   experienceCap: 0
+  levelCap: 9
   invincibilityDuration: 0.5
   healthBar: {fileID: 820135454}
   expBar: {fileID: 288110381}
@@ -22567,6 +22568,9 @@ MonoBehaviour:
   - passiveItemUpgradeIndex: 1
     initialPassiveItem: {fileID: 8184785903739824900, guid: eb1da9453cc64e741ad53e58564d9a4a, type: 3}
     passiveItemData: {fileID: 11400000, guid: 46568a21e3729cc4895d9407a2f1ca79, type: 2}
+  - passiveItemUpgradeIndex: 2
+    initialPassiveItem: {fileID: 7619620775876551253, guid: cff785a145d02ed4688a833e0e03723f, type: 3}
+    passiveItemData: {fileID: 11400000, guid: cb23031d4583d624bae42959046dcc6d, type: 2}
   upgradeUIOptions:
   - upgradeNameDisplay: {fileID: 698072883}
     upgradeDescriptionDisplay: {fileID: 310425288}
