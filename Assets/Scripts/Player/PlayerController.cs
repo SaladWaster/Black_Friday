@@ -75,41 +75,10 @@ public class PlayerController : MonoBehaviour
         }
 
 
-
-        // COLLISION BEHAVIOUR BELOW
-
-        /////// FOR EACH TIME.DELTATIME * X, X is the current modifier for speed...
-        ///
-
-        // calling checkCollisions function created
-        int count = checkCollisions(movement);
-
-        // Only let the player move if there isn't any collision detected
-        if (count == 0)
-        {
-            //transform.Translate(movement * Time.deltaTime * characterData.MoveSpeed);
-            transform.Translate(movement * Time.deltaTime * player.CurrentMoveSpeed);
-            return; // If no collisions, move the player and exit from the function
-        }
-        // If we hit something, try moving in the x direction
-        count = checkCollisions(new Vector2(movement.x, 0));
-        if (count == 0)
-        {
-            // transform.Translate(new Vector2(movement.x, 0) * Time.deltaTime * characterData.MoveSpeed);
-            transform.Translate(new Vector2(movement.x, 0) * Time.deltaTime * player.CurrentMoveSpeed);
-            return; // If no collisions in current X direction, move the player and exit from the function
-        }
-        // If we hit something, try moving in the y direction
-        count = checkCollisions(new Vector2(0, movement.y));
-        if (count == 0)
-        {
-            // transform.Translate(new Vector2(0, movement.y) * Time.deltaTime * characterData.MoveSpeed);
-            transform.Translate(new Vector2(0, movement.y) * Time.deltaTime * player.CurrentMoveSpeed);
-            return; // If no collisions in current Y direction, move the player and exit from the function
-        }
+        transform.Translate(movement * Time.deltaTime * player.CurrentMoveSpeed);
+       
 
 
-        // This allows the player to slide along the obstacles. 
     }
 
 
