@@ -6,6 +6,9 @@ public class BombBehavior : ProjectileWepBehaviour
 {
     private Animator animator;
     public float explosionRadius;
+
+    float currentRadiusMultiplier;
+
     protected override void Awake()
     {
         base.Awake();
@@ -13,14 +16,20 @@ public class BombBehavior : ProjectileWepBehaviour
     }
     protected override void Start()
     {
+
         //destroyAfterSeconds will now invoke a detonate function instead of Destroy(gameObject)
         Invoke(nameof(Detonate), destroyAfterSeconds);
+    }
+
+    void Update()
+    {
+       currentRadiusMultiplier = currentRange;
     }
 
     private void Detonate()
     {
         animator.SetTrigger("Explode");
-        RaycastHit2D[] explosionHits = Physics2D.CircleCastAll(transform.position, explosionRadius, Vector2.zero);
+        RaycastHit2D[] explosionHits = Physics2D.CircleCastAll(transform.position, explosionRadius * currentRadiusMultiplier, Vector2.zero);
         //Find all the things in the cast that the bomb cares about and call appropriate behavior on them
         foreach (RaycastHit2D explosionHit in explosionHits)
         {
@@ -53,6 +62,6 @@ public class BombBehavior : ProjectileWepBehaviour
     //For visualising the explosion radius
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+        Gizmos.DrawWireSphere(transform.position, explosionRadius * currentRadiusMultiplier );
     }
 }

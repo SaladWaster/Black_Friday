@@ -20,6 +20,7 @@ public class ProjectileWepBehaviour : MonoBehaviour
     protected float currentSpeed;
     protected float currentCooldownDuration;
     protected int currentPierce;
+    protected float currentRange;
 
     protected virtual void Awake()
     {
@@ -28,6 +29,7 @@ public class ProjectileWepBehaviour : MonoBehaviour
         currentSpeed = weaponData.Speed;
         currentCooldownDuration = weaponData.CooldownDuration;
         currentPierce = weaponData.Pierce;
+        currentRange = weaponData.Range;
 
     }
 
@@ -38,6 +40,8 @@ public class ProjectileWepBehaviour : MonoBehaviour
     {
         return currentDamage *= FindObjectOfType<PlayerStats>().CurrentMight;
     }
+
+
 
 
 

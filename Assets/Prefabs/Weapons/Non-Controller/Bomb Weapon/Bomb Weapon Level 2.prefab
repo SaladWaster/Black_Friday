@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2388989313349859931}
   - component: {fileID: 2388989313349859930}
   m_Layer: 0
-  m_Name: Bomb Weapon
+  m_Name: Bomb Weapon Level 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +97,7 @@ SpriteRenderer:
   m_SortingLayerID: 1422062873
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -389868640, guid: 1000626c4f169354cb3f459e476672e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 166733d1041b0f24ca43bc1ee54ee33d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
