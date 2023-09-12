@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class KnifeBehaviour : ProjectileWepBehaviour
 {
-
+    //SFX
+    AudioManager audioManager;
     //KnifeController kc;
 
     // Start is called before the first frame update
     protected override void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioManager.PlaySound(audioManager.knife);
         base.Start();
         //kc = FindObjectOfType<KnifeController>();
     }

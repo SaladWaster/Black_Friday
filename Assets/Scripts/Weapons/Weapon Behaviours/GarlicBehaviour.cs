@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GarlicBehaviour : MeleeWepBehaviour
 {
-
+    //SFX
+    AudioManager audioManager;
     // We create a list of marked enemies
     // The garlic only attacks enemies who have never touched it before once
     // Otherwise, enemies will repeatedly take damage from the garlic (Too OP)
@@ -12,6 +13,8 @@ public class GarlicBehaviour : MeleeWepBehaviour
 
     protected override void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioManager.PlaySound(audioManager.garlic);
         base.Start();
         //kc = FindObjectOfType<KnifeController>();
         markedEnemies = new List<GameObject>();
