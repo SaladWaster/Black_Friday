@@ -37,6 +37,10 @@ public class WeaponScriptableObject : ScriptableObject
     public int Pierce { get => pierce; private set => pierce = value; }
 
     [SerializeField]
+    float range; // Range of Weapon (radius)
+    public float Range { get => range; private set => range = value; }
+
+    [SerializeField]
     int level;  // We only modify this for testing. This will not be modified in game
     public int Level { get => level; private set => level = value; }
 

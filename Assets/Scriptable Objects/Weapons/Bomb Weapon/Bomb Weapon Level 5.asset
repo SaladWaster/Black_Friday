@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d934d7b739e13a44907d3b1d034f1fa, type: 3}
-  m_Name: Knife Weapon
+  m_Name: Bomb Weapon Level 5
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1612591080213474135, guid: 20265beba629bec4d8163348503b46fd, type: 3}
-  damage: 5
-  speed: 10
+  prefab: {fileID: 2388989313349859925, guid: bc098da61bc1ccc4db957c2b15f7cb7a, type: 3}
+  damage: 30
+  speed: 0
   cooldownDuration: 2
   pierce: 0
-  range: 0
+  range: 1.2
   level: 1
-  nextLevelPrefab: {fileID: 8396781229354854381, guid: 690b039c98ea6e741b48a30d03f325c5, type: 3}
-  name: Knife Wep
-  description: Shoot in direction player faces
-  icon: {fileID: -1080964550, guid: a4138bac6841f1c4b9537b2d29760712, type: 3}
+  nextLevelPrefab: {fileID: 0}
+  name: Bomberman Level 5
+  description: Reduce cooldown by 1 second
+  icon: {fileID: 21300000, guid: 9e5715de9303824488d6df4e2a98927a, type: 3}

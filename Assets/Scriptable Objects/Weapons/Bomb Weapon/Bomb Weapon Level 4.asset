@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d934d7b739e13a44907d3b1d034f1fa, type: 3}
-  m_Name: Bomb Weapon
+  m_Name: Bomb Weapon Level 4
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2388989313349859925, guid: b54d9628820fece47b02945b30aead96, type: 3}
-  damage: 20
+  prefab: {fileID: 2388989313349859925, guid: 9f1a73e086d9de840a475b35a5ff0f7e, type: 3}
+  damage: 30
   speed: 0
   cooldownDuration: 3
   pierce: 0
-  range: 1
+  range: 1.2
   level: 1
-  nextLevelPrefab: {fileID: 3710222638268734357, guid: a713671d7754df740b7e0b3a0f9143ca, type: 3}
-  name: Bomberman
-  description: A bomb that explodes, dealing damage to nearby targets
-  icon: {fileID: -389868640, guid: 1000626c4f169354cb3f459e476672e9, type: 3}
+  nextLevelPrefab: {fileID: 3710222638268734357, guid: 70196a6a1cb72b14bb458712c976c9d0, type: 3}
+  name: Bomberman Level 4
+  description: Increase the attack radius by 10%
+  icon: {fileID: 21300000, guid: d8da91cb007e8624fab575d93f2fde11, type: 3}
