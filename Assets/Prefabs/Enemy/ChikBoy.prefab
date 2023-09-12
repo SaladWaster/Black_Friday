@@ -165,6 +165,9 @@ MonoBehaviour:
   - name: Exp Gem
     itempPrefab: {fileID: 5828225064562824391, guid: 7b0efe5d1772ff04285e9188f17b5890, type: 3}
     dropRate: 100
+  - name: Big Exp Gem
+    itempPrefab: {fileID: 5828225064562824391, guid: 34876cfde329a164baa05fe894c78227, type: 3}
+    dropRate: 20
 --- !u!95 &-5294521967138098606
 Animator:
   serializedVersion: 5

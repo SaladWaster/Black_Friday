@@ -17,7 +17,7 @@ MonoBehaviour:
   speed: 15
   cooldownDuration: 1
   pierce: 0
-  level: 2
+  level: 3
   nextLevelPrefab: {fileID: 0}
   name: Knife Level 3
   description: Cooldown Duration reduced by 50%

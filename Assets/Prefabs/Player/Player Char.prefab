@@ -150,7 +150,6 @@ MonoBehaviour:
   lastVerticalVector: 0
   lastMovedVector: {x: 0, y: 0}
   canMove: 1
-  swordAttack: {fileID: 0}
   autoAttack: {fileID: 0}
 --- !u!50 &6917734037760320764
 Rigidbody2D:

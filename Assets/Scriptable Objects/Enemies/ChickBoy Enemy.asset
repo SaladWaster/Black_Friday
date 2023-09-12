@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63b2360ad118aa4a85858de3db33dcb, type: 3}
   m_Name: ChickBoy Enemy
   m_EditorClassIdentifier: 
-  moveSpeed: 1.5
-  maxHealth: 10
-  damage: 5
+  moveSpeed: 2
+  maxHealth: 20
+  damage: 20

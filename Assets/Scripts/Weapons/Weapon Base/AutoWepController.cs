@@ -6,11 +6,7 @@ public class AutoWepController : MonoBehaviour
 {
     [Header("Weapon Stats")]
     public WeaponScriptableObject weaponData;
-    // public GameObject prefab;
-    // public float damage;
-    // public float speed;
-    // public float cooldownDuration;
-    // public int pierce; // Pierce is hits before a wep breaks
+    
     float currentCooldown;
 
     protected PlayerController pm;

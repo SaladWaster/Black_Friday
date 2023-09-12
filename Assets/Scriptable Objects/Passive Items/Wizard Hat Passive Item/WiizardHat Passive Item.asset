@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multiplier: 1
   level: 1
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 7619620775876551253, guid: f91dfc59e4827b6418e8e2fc8e1d402f, type: 3}
   name: Wizard Hat
   description: Regenerates 1% of max health every second.
   icon: {fileID: 1568025392, guid: f745b464532570144b0448eeadb1281b, type: 3}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3200643975467403102}
   - component: {fileID: 2671860551776787385}
   m_Layer: 0
-  m_Name: spritesheet_32x32_159
+  m_Name: GiftBox
   m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375f13dba9fa52640980efe0c3b24ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 1
 --- !u!114 &2671860551776787385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +139,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - name: Red Potion
+  - name: Burger
     itempPrefab: {fileID: 7499207845158348492, guid: e010dc4178cc49147b08718587852fd0, type: 3}
+    dropRate: 100
+  - name: Big Exp Gem
+    itempPrefab: {fileID: 5828225064562824391, guid: 34876cfde329a164baa05fe894c78227, type: 3}
     dropRate: 100

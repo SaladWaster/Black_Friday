@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c0130b9336bb04281f91a308c1689f, type: 3}
+  m_Name: WiizardHat Passive Item Level 5
+  m_EditorClassIdentifier: 
+  multiplier: 5
+  level: 5
+  nextLevelPrefab: {fileID: 0}
+  name: Wizard Hat Level 5
+  description: Regenerates 5% of max health every second.
+  icon: {fileID: 369986268, guid: f745b464532570144b0448eeadb1281b, type: 3}
