@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     // FOR ATTACKING ///////////
     public bool canMove = true;
     
-    public SwordAttack swordAttack; // declare a public SwordAttack instance.
+    // public SwordAttack swordAttack; // declare a public SwordAttack instance.
 
     public AutoWep1 autoAttack; // public AutoWep1 instance
 
@@ -137,46 +137,46 @@ public class PlayerController : MonoBehaviour
 
 
 
-    void OnFire()
-    {
-        if(GameManager.instance.isGameOver)
-        {
-            return;
-        }
-        animator.SetTrigger("attack");
-    }
+    // void OnFire()
+    // {
+    //     if(GameManager.instance.isGameOver)
+    //     {
+    //         return;
+    //     }
+    //     animator.SetTrigger("attack");
+    // }
 
 
 
 
-    public void LockMovement()
-    {
-        canMove = false;
-    }
+    // public void LockMovement()
+    // {
+    //     canMove = false;
+    // }
 
-    public void UnlockMovement()
-    {
-        canMove = true;
-    }
+    // public void UnlockMovement()
+    // {
+    //     canMove = true;
+    // }
 
-    public void SwordAttack()
-    {
-        LockMovement();
-        if (spriteRenderer.flipX)
-        {
-            swordAttack.AttackLeft();
-        }
-        else
-        {
-            swordAttack.AttackRight();
-        }
-    }
+    // public void SwordAttack()
+    // {
+    //     LockMovement();
+    //     if (spriteRenderer.flipX)
+    //     {
+    //         swordAttack.AttackLeft();
+    //     }
+    //     else
+    //     {
+    //         swordAttack.AttackRight();
+    //     }
+    // }
 
-    public void StopAttack()
-    {
-        UnlockMovement();
-        swordAttack.StopAttack();
-    }
+    // public void StopAttack()
+    // {
+    //     UnlockMovement();
+    //     swordAttack.StopAttack();
+    // }
 
 
 }

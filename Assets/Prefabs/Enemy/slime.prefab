@@ -178,6 +178,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - name: Blue gem
+  - name: Exp Gem
     itempPrefab: {fileID: 5828225064562824391, guid: 7b0efe5d1772ff04285e9188f17b5890, type: 3}
     dropRate: 100
+  - name: Big Exp Gem
+    itempPrefab: {fileID: 5828225064562824391, guid: 34876cfde329a164baa05fe894c78227, type: 3}
+    dropRate: 20
