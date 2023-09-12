@@ -7,6 +7,8 @@ using TMPro;
 public class PlayerStats : MonoBehaviour
 {
 
+    //Audio stuff
+    AudioManager audioManager;
     // For loading the correct character (and their data) into the scene
     CharacterScriptableObject characterData;
 
@@ -217,6 +219,8 @@ public class PlayerStats : MonoBehaviour
    
     void Awake()
     {
+        //Audio Stuff / sfx
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         // Be sure to set characterData before the characterStats, 
         // or it may cause a Null reference otherwise
         // Now, the characterScriptableObject is automatically assigned to PlayerStats component of player when the button is clicked from the Menu scene 
@@ -371,6 +375,9 @@ public class PlayerStats : MonoBehaviour
     {
         //Destroy(gameObject);
         Debug.Log("Oooofff!!!");
+
+        //Audio Stuff, SFX
+        audioManager.PlaySound(audioManager.death);
 
         if(!GameManager.instance.isGameOver)
         {
