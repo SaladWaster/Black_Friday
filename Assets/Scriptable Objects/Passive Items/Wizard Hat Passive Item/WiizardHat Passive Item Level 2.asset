@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c0130b9336bb04281f91a308c1689f, type: 3}
   m_Name: WiizardHat Passive Item Level 2
   m_EditorClassIdentifier: 
-  multiplier: 2
+  multiplier: 0.2
   level: 2
   nextLevelPrefab: {fileID: 7619620775876551253, guid: 791cd5c9c8cb0ab49a1dbc546718efb3, type: 3}
   name: Wizard Hat Level 2
-  description: Regenerates 2% of max health every second.
+  description: Regenerates 0.2% of max health every second.
   icon: {fileID: 369986268, guid: f745b464532570144b0448eeadb1281b, type: 3}

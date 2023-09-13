@@ -24,6 +24,10 @@ public class PlayerStats : MonoBehaviour
     float currentProjectileSpeed;
     float currentMagnet;
 
+    /// Keeps a constant check on max health
+    // Used for recovery passive multiplier
+    public float MaxHealth;
+
     // Using properites to check stats
     #region  Current Stat Properties
     public float CurrentMoveSpeed
@@ -240,6 +244,10 @@ public class PlayerStats : MonoBehaviour
         CurrentProjectileSpeed = characterData.ProjectileSpeed;
         CurrentMagnet = characterData.Magnet;
 
+
+        // Used for recovery passive multiplier
+        MaxHealth = characterData.MaxHealth;
+
         // Spawning in the starter weapon
         SpawnWeapon(characterData.StartingWeapon);
         // // Only use this to test weapon spawns for multiple weapons
@@ -404,6 +412,8 @@ public class PlayerStats : MonoBehaviour
                 CurrentHealth = characterData.MaxHealth;
             }
 
+            UpdateHealthBar();
+
         }
         
     }
@@ -421,6 +431,8 @@ public class PlayerStats : MonoBehaviour
             {
                 CurrentHealth = characterData.MaxHealth;
             }
+
+            UpdateHealthBar();
 
         }
         

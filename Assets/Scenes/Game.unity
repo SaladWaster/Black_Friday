@@ -15831,6 +15831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab5533fa752d5e4090b7270572de90b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 0
   experience: 0
   level: 1
   experienceCap: 0
@@ -16402,11 +16403,38 @@ MonoBehaviour:
     waveQuota: 0
     spawnInterval: 2
     spawnCount: 0
+  - waveName: Wave 2
+    enemyGroups:
+    - enemyName: CHICKENS
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 8907191645709617412, guid: b809e4e41029ae147a16b1a5aba106be, type: 3}
+    waveQuota: 0
+    spawnInterval: 2
+    spawnCount: 0
+  - waveName: Wave 3
+    enemyGroups:
+    - enemyName: Skeles
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 3618865886686579962, guid: c417a2ec2c6462d44bcce70dacdebdee, type: 3}
+    waveQuota: 0
+    spawnInterval: 2
+    spawnCount: 0
+  - waveName: Wave 4
+    enemyGroups:
+    - enemyName: BIG Slime
+      enemyCount: 2
+      spawnCount: 0
+      enemyPrefab: {fileID: 1324005534906758945, guid: fe61fdc52e255dc428ef1b67964a50cf, type: 3}
+    waveQuota: 0
+    spawnInterval: 2
+    spawnCount: 0
   currentWaveCount: 0
-  waveInterval: 0
   enemiesAlive: 0
   maxEnemiesAllowed: 4
   maxEnemiesReached: 0
+  waveInterval: 15
   relativeSpawnPoints:
   - {fileID: 741488766}
   - {fileID: 1723336021}
@@ -17625,6 +17653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab5533fa752d5e4090b7270572de90b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 0
   experience: 0
   level: 1
   experienceCap: 0
@@ -17697,10 +17726,25 @@ MonoBehaviour:
   - weaponUpgradeIndex: 1
     initialWeapon: {fileID: 3710222638268734357, guid: b3273889ea4ac1141a6174417d0977fb, type: 3}
     weaponData: {fileID: 11400000, guid: fdf5bd5feb80e3c4eb717c4a131d2962, type: 2}
+  - weaponUpgradeIndex: 2
+    initialWeapon: {fileID: 4366987857838747797, guid: 11338c2b64fa2c84fa3af464002a9cb8, type: 3}
+    weaponData: {fileID: 11400000, guid: 8ed5ffd07a364ff438b524e741083214, type: 2}
+  - weaponUpgradeIndex: 3
+    initialWeapon: {fileID: 3051418165532400015, guid: d998fbfd746b90e45869a1d7a4d71288, type: 3}
+    weaponData: {fileID: 11400000, guid: ce81239c54a913d4381e0b023f030661, type: 2}
   passiveItemUpgradeOptions:
   - passiveItemUpgradeIndex: 0
     initialPassiveItem: {fileID: 7619620775876551253, guid: cff785a145d02ed4688a833e0e03723f, type: 3}
     passiveItemData: {fileID: 11400000, guid: cb23031d4583d624bae42959046dcc6d, type: 2}
+  - passiveItemUpgradeIndex: 1
+    initialPassiveItem: {fileID: 6946158817557660036, guid: 11442bf0d39bf55448ac513986ee1a41, type: 3}
+    passiveItemData: {fileID: 11400000, guid: 399639cb7b27b6f4f9a444360aaecdbf, type: 2}
+  - passiveItemUpgradeIndex: 2
+    initialPassiveItem: {fileID: 2813830849254228355, guid: 4a66a0b494aa2cd4eacdfaaa522a0233, type: 3}
+    passiveItemData: {fileID: 11400000, guid: 982ed43da54225e409aba48c73738357, type: 2}
+  - passiveItemUpgradeIndex: 3
+    initialPassiveItem: {fileID: 8184785903739824900, guid: eb1da9453cc64e741ad53e58564d9a4a, type: 3}
+    passiveItemData: {fileID: 11400000, guid: 46568a21e3729cc4895d9407a2f1ca79, type: 2}
   upgradeUIOptions:
   - upgradeNameDisplay: {fileID: 698072883}
     upgradeDescriptionDisplay: {fileID: 310425288}
