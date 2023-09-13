@@ -20,6 +20,6 @@ MonoBehaviour:
   range: 0
   level: 1
   nextLevelPrefab: {fileID: 8396781229354854381, guid: 690b039c98ea6e741b48a30d03f325c5, type: 3}
-  name: Knife Wep
-  description: Shoot in direction player faces
+  name: Knife
+  description: Fires projectile in player direction
   icon: {fileID: -1080964550, guid: a4138bac6841f1c4b9537b2d29760712, type: 3}

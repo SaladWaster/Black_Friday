@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c0130b9336bb04281f91a308c1689f, type: 3}
   m_Name: Spinash Passive Item
   m_EditorClassIdentifier: 
-  multiplier: 10
+  multiplier: 5
   level: 1
   nextLevelPrefab: {fileID: 8184785903739824900, guid: c3fbcc9dc73a59c42b28dfe2bdcfc8bb, type: 3}
   name: Hercules Gloves
-  description: All attacks deal 10% more damage
+  description: All attacks deal 5% more damage
   icon: {fileID: -1435198918, guid: f745b464532570144b0448eeadb1281b, type: 3}

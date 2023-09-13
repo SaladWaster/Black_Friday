@@ -15,6 +15,6 @@ MonoBehaviour:
   multiplier: 36
   level: 5
   nextLevelPrefab: {fileID: 0}
-  name: Wings Level 5
+  name: Wing Shoes Level 5
   description: Increases movement speed by 36%
   icon: {fileID: 868684455, guid: f745b464532570144b0448eeadb1281b, type: 3}

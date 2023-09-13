@@ -6,10 +6,12 @@ public class WizardHatPassiveItem : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        // Multiplies current stat by ( 1 + Fraction)
-        // 1 is the default
-        // e.g Multiplier of 10, 10/100 is 10% or 0.1
-        // player.CurrentProjectileSpeed *= 1 + passiveItemData.Multiplier / 100f;
-        player.CurrentRecovery = (0 + passiveItemData.Multiplier) / 100f * player.CurrentHealth;
+        // Divide health by 100, turning the Multiplier value of passive to be a percentage of Player's health
+        // REMEMBER recovery is PER SECOND, dont overtune it
+    
+        // player.CurrentRecovery = (0 + passiveItemData.Multiplier) / 100f * player.CurrentHealth;
+        
+        player.CurrentRecovery = passiveItemData.Multiplier * player.MaxHealth / 100f;        /// Recovery is a flat number, initialised at 1 atm
+
     }
 }

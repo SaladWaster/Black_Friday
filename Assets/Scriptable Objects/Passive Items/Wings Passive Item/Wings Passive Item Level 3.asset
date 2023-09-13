@@ -15,6 +15,6 @@ MonoBehaviour:
   multiplier: 24
   level: 3
   nextLevelPrefab: {fileID: 6946158817557660036, guid: 386efd78cb8000c4db2aeac0e13d7edc, type: 3}
-  name: Wings Level 3
+  name: Wing Shoes Level 3
   description: Increases movement speed by 24%
   icon: {fileID: -1249579643, guid: f745b464532570144b0448eeadb1281b, type: 3}
