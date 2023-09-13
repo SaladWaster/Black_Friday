@@ -14,6 +14,17 @@ public class AudioManager : MonoBehaviour
     public AudioClip hoverFx;
     public AudioClip clickFx;
     public AudioClip death;
+    public AudioClip lvlUp;
+    public AudioClip clickLvlUp;
+    public AudioClip gameOverMusic;
+    public AudioClip pause;
+    public AudioClip pickUp;
+
+    // Add a public property to access the music field
+    public AudioSource Music
+    {
+        get { return music; }
+    }
 
     // void Awake()
     // {

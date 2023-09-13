@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df69f57a009c624da9dbd44844b79d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: fdf5bd5feb80e3c4eb717c4a131d2962, type: 2}
+  weaponData: {fileID: 11400000, guid: 4efeaac2264d8d149a1456becc28ea89, type: 2}
   destroyAfterSeconds: 1
   explosionRadius: 1.5
+  currentRadiusMultiplier: 0

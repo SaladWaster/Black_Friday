@@ -607,6 +607,11 @@ MonoBehaviour:
   hoverFx: {fileID: 8300000, guid: 2f17952b9e55513498fc3cc4198bd761, type: 3}
   clickFx: {fileID: 8300000, guid: 96360ed5a3cc8844f9686c2918624dac, type: 3}
   death: {fileID: 0}
+  lvlUp: {fileID: 0}
+  clickLvlUp: {fileID: 0}
+  gameOverMusic: {fileID: 0}
+  pause: {fileID: 0}
+  pickUp: {fileID: 0}
 --- !u!82 &1023237530
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1135,6 +1140,18 @@ PrefabInstance:
       value: Sound Manager
       objectReference: {fileID: 0}
     - target: {fileID: 2076390504545767561, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
+      propertyPath: lvlUp
+      value: 
+      objectReference: {fileID: 8300000, guid: d4fcfc6293680624ca13c1774d91b38e, type: 3}
+    - target: {fileID: 2076390504545767561, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 8300000, guid: d9c7fcc6577e51b4b9360a32316f3be2, type: 3}
+    - target: {fileID: 2076390504545767561, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
+      propertyPath: pickUp
+      value: 
+      objectReference: {fileID: 8300000, guid: f4d88ea5ab7eaf54db89114c9f2de23b, type: 3}
+    - target: {fileID: 2076390504545767561, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
       propertyPath: clickFx
       value: 
       objectReference: {fileID: 8300000, guid: 96360ed5a3cc8844f9686c2918624dac, type: 3}
@@ -1146,6 +1163,14 @@ PrefabInstance:
       propertyPath: background
       value: 
       objectReference: {fileID: 8300000, guid: d2d2cb2524ad5ab42ac5f9eade7c718a, type: 3}
+    - target: {fileID: 2076390504545767561, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
+      propertyPath: clickLvlUp
+      value: 
+      objectReference: {fileID: 8300000, guid: 491fb2486a03d4f4d8ddfef0d0cd5e9c, type: 3}
+    - target: {fileID: 2076390504545767561, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
+      propertyPath: gameOverMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e2801d8d09620342be8780c46ed2d07, type: 3}
     - target: {fileID: 2076390504545767562, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1189,6 +1214,10 @@ PrefabInstance:
     - target: {fileID: 2076390504545767562, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076390505786643966, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}

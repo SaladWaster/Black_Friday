@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d934d7b739e13a44907d3b1d034f1fa, type: 3}
+  m_Name: Books Weapon Level 4
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4822302805763372338, guid: f13fb70a260b0d04d8afc8abb57ac257, type: 3}
+  damage: 6
+  speed: 1
+  cooldownDuration: 4
+  pierce: 50
+  range: 0
+  level: 4
+  nextLevelPrefab: {fileID: 3051418165532400015, guid: 00fa2f7b3455ced46b4ee41795d45a66, type: 3}
+  name: Book Level 4
+  description: Increase Damage by 100%
+  icon: {fileID: 758587839, guid: f745b464532570144b0448eeadb1281b, type: 3}

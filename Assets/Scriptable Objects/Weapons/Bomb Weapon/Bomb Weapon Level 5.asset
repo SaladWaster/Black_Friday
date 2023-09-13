@@ -17,9 +17,9 @@ MonoBehaviour:
   speed: 0
   cooldownDuration: 2
   pierce: 0
-  range: 1.2
+  range: 1.5
   level: 1
   nextLevelPrefab: {fileID: 0}
   name: Bomberman Level 5
-  description: Reduce cooldown by 1 second
+  description: Reduce cooldown by 1 second, Increase the attack radius by 50%
   icon: {fileID: 21300000, guid: 9e5715de9303824488d6df4e2a98927a, type: 3}

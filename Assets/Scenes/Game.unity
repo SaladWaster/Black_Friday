@@ -417,6 +417,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111067553}
   m_CullTransparentMesh: 1
+--- !u!1001 &147298520
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1853864273708840385, guid: 1d5948539b6ec2d48add1775f0fd7c23, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853864273708840385, guid: 1d5948539b6ec2d48add1775f0fd7c23, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853864273708840385, guid: 1d5948539b6ec2d48add1775f0fd7c23, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853864273708840385, guid: 1d5948539b6ec2d48add1775f0fd7c23, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853864273708840385, guid: 1d5948539b6ec2d48add1775f0fd7c23, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853864273708840385, guid: 1d5948539b6ec2d48add1775f0fd7c23, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853864273708840385, guid: 1d5948539b6ec2d48add1775f0fd7c23, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853864273708840385, guid: 1d5948539b6ec2d48add1775f0fd7c23, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853864273708840385, guid: 1d5948539b6ec2d48add1775f0fd7c23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853864273708840385, guid: 1d5948539b6ec2d48add1775f0fd7c23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853864273708840385, guid: 1d5948539b6ec2d48add1775f0fd7c23, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853864273708840391, guid: 1d5948539b6ec2d48add1775f0fd7c23, type: 3}
+      propertyPath: m_Name
+      value: Grid (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1d5948539b6ec2d48add1775f0fd7c23, type: 3}
 --- !u!1 &168302879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,6 +1690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grid (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4259111714185205672, guid: 887e3e078ec808a46871cc0e02c22886, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4259111714185205678, guid: 887e3e078ec808a46871cc0e02c22886, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1910,7 +1971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &593749944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15171,9 +15232,29 @@ PrefabInstance:
       value: Sound Manager
       objectReference: {fileID: 0}
     - target: {fileID: 2076390504545767561, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
+      propertyPath: lvlUp
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d4e5260405c58b4784e7bb463cce0e5, type: 3}
+    - target: {fileID: 2076390504545767561, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 8300000, guid: d9c7fcc6577e51b4b9360a32316f3be2, type: 3}
+    - target: {fileID: 2076390504545767561, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
+      propertyPath: pickUp
+      value: 
+      objectReference: {fileID: 8300000, guid: f4d88ea5ab7eaf54db89114c9f2de23b, type: 3}
+    - target: {fileID: 2076390504545767561, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
       propertyPath: background
       value: 
       objectReference: {fileID: 8300000, guid: b6d61bc6c87fbc942b1bb6fcd49d3581, type: 3}
+    - target: {fileID: 2076390504545767561, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
+      propertyPath: clickLvlUp
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c8b248e7c8e9e249affb9a5ee6754b5, type: 3}
+    - target: {fileID: 2076390504545767561, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
+      propertyPath: gameOverMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e2801d8d09620342be8780c46ed2d07, type: 3}
     - target: {fileID: 2076390504545767562, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -15217,6 +15298,10 @@ PrefabInstance:
     - target: {fileID: 2076390504545767562, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076390505786643966, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
@@ -16237,7 +16322,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 4
 --- !u!114 &1957070974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16311,70 +16396,16 @@ MonoBehaviour:
   - waveName: Wave 1
     enemyGroups:
     - enemyName: Slime
-      enemyCount: 30
+      enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 1324005534906758945, guid: d9c4235c8ba83aa44bbf8aff4117b7e5, type: 3}
-    - enemyName: Skeleton
-      enemyCount: 6
-      spawnCount: 0
-      enemyPrefab: {fileID: 3618865886686579962, guid: c417a2ec2c6462d44bcce70dacdebdee, type: 3}
-    waveQuota: 36
-    spawnInterval: 1
-    spawnCount: 0
-  - waveName: Wave 2
-    enemyGroups:
-    - enemyName: Slime
-      enemyCount: 26
-      spawnCount: 0
-      enemyPrefab: {fileID: 1324005534906758945, guid: d9c4235c8ba83aa44bbf8aff4117b7e5, type: 3}
-    - enemyName: Skeleton
-      enemyCount: 12
-      spawnCount: 0
-      enemyPrefab: {fileID: 3618865886686579962, guid: c417a2ec2c6462d44bcce70dacdebdee, type: 3}
-    - enemyName: Chick Boy
-      enemyCount: 8
-      spawnCount: 0
-      enemyPrefab: {fileID: 8907191645709617412, guid: b809e4e41029ae147a16b1a5aba106be, type: 3}
-    - enemyName: Giant Slime
-      enemyCount: 1
-      spawnCount: 0
-      enemyPrefab: {fileID: 1324005534906758945, guid: fe61fdc52e255dc428ef1b67964a50cf, type: 3}
-    - enemyName: Giant Skeleton
-      enemyCount: 1
-      spawnCount: 0
-      enemyPrefab: {fileID: 3618865886686579962, guid: 5191cb0d9cf52714fb5524312d60ce57, type: 3}
-    waveQuota: 48
-    spawnInterval: 1
-    spawnCount: 0
-  - waveName: Wave 3
-    enemyGroups:
-    - enemyName: Slime
-      enemyCount: 42
-      spawnCount: 0
-      enemyPrefab: {fileID: 1324005534906758945, guid: d9c4235c8ba83aa44bbf8aff4117b7e5, type: 3}
-    - enemyName: Skeleton
-      enemyCount: 28
-      spawnCount: 0
-      enemyPrefab: {fileID: 3618865886686579962, guid: c417a2ec2c6462d44bcce70dacdebdee, type: 3}
-    - enemyName: Chick Boy
-      enemyCount: 14
-      spawnCount: 0
-      enemyPrefab: {fileID: 8907191645709617412, guid: b809e4e41029ae147a16b1a5aba106be, type: 3}
-    - enemyName: Giant Slime
-      enemyCount: 4
-      spawnCount: 0
-      enemyPrefab: {fileID: 1324005534906758945, guid: fe61fdc52e255dc428ef1b67964a50cf, type: 3}
-    - enemyName: Giant Skeleton
-      enemyCount: 4
-      spawnCount: 0
-      enemyPrefab: {fileID: 3618865886686579962, guid: 5191cb0d9cf52714fb5524312d60ce57, type: 3}
-    waveQuota: 96
-    spawnInterval: 1
+    waveQuota: 0
+    spawnInterval: 2
     spawnCount: 0
   currentWaveCount: 0
-  waveInterval: 3
+  waveInterval: 0
   enemiesAlive: 0
-  maxEnemiesAllowed: 18
+  maxEnemiesAllowed: 4
   maxEnemiesReached: 0
   relativeSpawnPoints:
   - {fileID: 741488766}
@@ -17605,13 +17636,13 @@ MonoBehaviour:
   levelRanges:
   - startLevel: 1
     endLevel: 3
-    experienceCapIncrease: 80
+    experienceCapIncrease: 400
   - startLevel: 4
     endLevel: 10
-    experienceCapIncrease: 120
+    experienceCapIncrease: 600
   - startLevel: 11
     endLevel: 16
-    experienceCapIncrease: 160
+    experienceCapIncrease: 800
   weaponIndex: 0
   passiveItemIndex: 0
   secondWeaponTest: {fileID: 3710222638268734357, guid: b3273889ea4ac1141a6174417d0977fb, type: 3}
@@ -17664,24 +17695,12 @@ MonoBehaviour:
     initialWeapon: {fileID: 8396781229354854381, guid: bc7db38ffa1d263489d6fd2ce72fb8cb, type: 3}
     weaponData: {fileID: 11400000, guid: fcfb5a5a879a90e4495e3af72555cf86, type: 2}
   - weaponUpgradeIndex: 1
-    initialWeapon: {fileID: 4366987857838747797, guid: 11338c2b64fa2c84fa3af464002a9cb8, type: 3}
-    weaponData: {fileID: 11400000, guid: 8ed5ffd07a364ff438b524e741083214, type: 2}
-  - weaponUpgradeIndex: 1
     initialWeapon: {fileID: 3710222638268734357, guid: b3273889ea4ac1141a6174417d0977fb, type: 3}
     weaponData: {fileID: 11400000, guid: fdf5bd5feb80e3c4eb717c4a131d2962, type: 2}
   passiveItemUpgradeOptions:
   - passiveItemUpgradeIndex: 0
-    initialPassiveItem: {fileID: 6946158817557660036, guid: 11442bf0d39bf55448ac513986ee1a41, type: 3}
-    passiveItemData: {fileID: 11400000, guid: 399639cb7b27b6f4f9a444360aaecdbf, type: 2}
-  - passiveItemUpgradeIndex: 1
-    initialPassiveItem: {fileID: 8184785903739824900, guid: eb1da9453cc64e741ad53e58564d9a4a, type: 3}
-    passiveItemData: {fileID: 11400000, guid: 46568a21e3729cc4895d9407a2f1ca79, type: 2}
-  - passiveItemUpgradeIndex: 2
     initialPassiveItem: {fileID: 7619620775876551253, guid: cff785a145d02ed4688a833e0e03723f, type: 3}
     passiveItemData: {fileID: 11400000, guid: cb23031d4583d624bae42959046dcc6d, type: 2}
-  - passiveItemUpgradeIndex: 3
-    initialPassiveItem: {fileID: 2813830849254228355, guid: 4a66a0b494aa2cd4eacdfaaa522a0233, type: 3}
-    passiveItemData: {fileID: 11400000, guid: 982ed43da54225e409aba48c73738357, type: 2}
   upgradeUIOptions:
   - upgradeNameDisplay: {fileID: 698072883}
     upgradeDescriptionDisplay: {fileID: 310425288}
@@ -19106,6 +19125,11 @@ MonoBehaviour:
   hoverFx: {fileID: 8300000, guid: 2f17952b9e55513498fc3cc4198bd761, type: 3}
   clickFx: {fileID: 8300000, guid: 96360ed5a3cc8844f9686c2918624dac, type: 3}
   death: {fileID: 0}
+  lvlUp: {fileID: 0}
+  clickLvlUp: {fileID: 0}
+  gameOverMusic: {fileID: 0}
+  pause: {fileID: 0}
+  pickUp: {fileID: 0}
 --- !u!82 &3206468657029552874
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21343,6 +21367,9 @@ GameObject:
   - component: {fileID: 6398966242495821908}
   - component: {fileID: 3602320615027530665}
   - component: {fileID: 1786263761725907175}
+  - component: {fileID: 6398966242495821911}
+  - component: {fileID: 6398966242495821910}
+  - component: {fileID: 6398966242495821909}
   m_Layer: 5
   m_Name: Done
   m_TagString: Untagged
@@ -22251,6 +22278,172 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5511930331239833702}
   m_CullTransparentMesh: 1
+--- !u!114 &6398966242495821909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5511930331239833702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6398966242495821910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: HoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6398966242495821910}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: ClickSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &6398966242495821910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5511930331239833702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76cb7b15ecd97a4429324d5f3d397592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 0}
+  sfx: {fileID: 6398966242495821911}
+  background: {fileID: 0}
+  knife: {fileID: 0}
+  garlic: {fileID: 0}
+  hoverFx: {fileID: 8300000, guid: 2f17952b9e55513498fc3cc4198bd761, type: 3}
+  clickFx: {fileID: 8300000, guid: 96360ed5a3cc8844f9686c2918624dac, type: 3}
+  death: {fileID: 0}
+  lvlUp: {fileID: 0}
+  clickLvlUp: {fileID: 0}
+  gameOverMusic: {fileID: 0}
+  pause: {fileID: 0}
+  pickUp: {fileID: 0}
+--- !u!82 &6398966242495821911
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5511930331239833702}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6404783944265950320
 GameObject:
   m_ObjectHideFlags: 0
@@ -24232,6 +24425,11 @@ MonoBehaviour:
   hoverFx: {fileID: 8300000, guid: 2f17952b9e55513498fc3cc4198bd761, type: 3}
   clickFx: {fileID: 8300000, guid: 96360ed5a3cc8844f9686c2918624dac, type: 3}
   death: {fileID: 0}
+  lvlUp: {fileID: 0}
+  clickLvlUp: {fileID: 0}
+  gameOverMusic: {fileID: 0}
+  pause: {fileID: 0}
+  pickUp: {fileID: 0}
 --- !u!82 &8827905371138944479
 AudioSource:
   m_ObjectHideFlags: 0

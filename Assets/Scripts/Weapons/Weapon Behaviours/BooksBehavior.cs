@@ -11,4 +11,14 @@ public class BooksBehavior : ProjectileWepBehaviour
 
         //Do nothing, don't call Destroy()
     }
+
+
+    // protected override void Start()
+    // {
+    //     audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    //     audioManager.PlaySound(audioManager.garlic);
+    //     base.Start();
+    //     //kc = FindObjectOfType<KnifeController>();
+    //     markedEnemies = new List<GameObject>();
+    // }
 }

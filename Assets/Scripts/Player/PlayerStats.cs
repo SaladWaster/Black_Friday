@@ -382,6 +382,9 @@ public class PlayerStats : MonoBehaviour
         if(!GameManager.instance.isGameOver)
         {
             GameManager.instance.GameOver();
+
+            audioManager.Music.clip = audioManager.gameOverMusic;
+            audioManager.Music.Play();
         }
     }
 
@@ -410,6 +413,7 @@ public class PlayerStats : MonoBehaviour
         //Only causes heal if not at max health
         if(CurrentHealth < characterData.MaxHealth)
         {
+            Debug.Log("Recovering Health");
             CurrentHealth += CurrentRecovery * Time.deltaTime;
 
             // If the health healed casuses current health to exceed the Max, set the health to Max
