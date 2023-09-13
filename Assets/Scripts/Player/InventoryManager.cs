@@ -172,8 +172,28 @@ public class InventoryManager : MonoBehaviour
             }
 
             int upgradeType;
+            
+            // // If no avail wep/passive upgrades left, offer the other's upgrades
+            // if (availableWeaponUpgrades.Count >= 1 && availablePassiveItemUpgrades.Count >= 1)
+            // {
+            //     // First value is included, 2nd value is the excluded from the range
+            //     upgradeType = Random.Range(1,3);
+            // }
+            // else if(availableWeaponUpgrades.Count == 0 && availablePassiveItemUpgrades.Count >= 1)
+            // {
+            //     // If no weps upgrades left, pick passive
+            //     upgradeType = 2;
+            // }
+            // else if (availablePassiveItemUpgrades.Count >= 1 && availablePassiveItemUpgrades.Count == 0)
+            // {
+            //     // If no passive upgrades left, pick wep
+            //     upgradeType = 1;
+            // }
+           
+            
 
             // If no avail wep/passive upgrades left, offer the other's upgrades
+            // If neither are available, the above if conditional wont event let you reach this point
             if(availableWeaponUpgrades.Count == 0)
             {
                 upgradeType = 2;
@@ -203,14 +223,17 @@ public class InventoryManager : MonoBehaviour
 
                     for (int i = 0; i < weaponSlots.Count; i++)
                     {
+                        // If the slot isnt empty AND the the slot contains the data of the upgrade selected
                         if(weaponSlots[i] != null && weaponSlots[i].weaponData == chosenWeaponUpgrade.weaponData)
                         {
+                            //it is not a new weapon
                             newWeapon = false;
 
+                            // if it is not a new weapon
                             if(!newWeapon)
                             {
 
-                                // If no further upgrades, do not make the UI show and break
+                                // If no further upgrades (by checking the NextLevelPrefab), do not make the UI show and break
                                 if(!chosenWeaponUpgrade.weaponData.NextLevelPrefab)
                                 {
                                     DisableUpgradeUI(upgradeOption);

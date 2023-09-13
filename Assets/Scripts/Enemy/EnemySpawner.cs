@@ -9,27 +9,27 @@ public class EnemySpawner : MonoBehaviour
     {
         public string waveName;
         public List<EnemyGroup> enemyGroups;    // List of enemy types
-        public int waveQuota;   // No. of enemies to spawn
+        public int waveQuota;   // Total no. of enemies to spawn in this wave
         public float spawnInterval; // Time interval to spawn enemies
-        public int spawnCount;  // No. of enemies already in wave
+        public int spawnCount;  // No. of enemies already spawned in this wave
     }
 
     [System.Serializable]
     public class EnemyGroup
     {
         public string enemyName;
-        public int enemyCount;  // No. of enemies to spawn in wave
-        public int spawnCount;  // No. of enemies already in wave
+        public int enemyCount;  // No. of enemies to spawn in this wave
+        public int spawnCount;  // No. of enemies already spawned in this wave
         public GameObject enemyPrefab;
     }
 
-    public List<Wave> waves;
-    public int currentWaveCount;
+    public List<Wave> waves;    // List of all waves
+    public int currentWaveCount;    // current wave index
 
 
     [Header("Spawn Attributes")]
     float spawnTimer; // Timer for when to spawn the next enemy
-    public float waveInterval; // Interval between each wave
+    public float waveInterval; // Time interval between each wave
     public int enemiesAlive;
     public int maxEnemiesAllowed; // The maximum number of enemies allowed on the map at once
     public bool maxEnemiesReached = false;
@@ -76,7 +76,7 @@ public class EnemySpawner : MonoBehaviour
     {
         isWaveActive = true;
 
-        // Wait for the wave interval before starting the next wave
+        // Wait for the wave time interval before starting the next wave
         yield return new WaitForSeconds(waveInterval);
 
         // Check if there are more waves to start
@@ -95,6 +95,7 @@ public class EnemySpawner : MonoBehaviour
         int currentWaveQuota = 0;
         foreach (var enemyGroup in waves[currentWaveCount].enemyGroups)
         {
+            // counts every enemy we have placed in the enemyGroup
             currentWaveQuota += enemyGroup.enemyCount;
         }
 
@@ -110,12 +111,15 @@ public class EnemySpawner : MonoBehaviour
     /// </summary>
     void SpawnEnemies()
     {
-        // CHeck to see if min number of enemies for wave are spawned
+        // Check to see if min number of enemies for the current wave are spawned
+        // If not, continue to spawn current wave until max on screen reaches
         if (waves[currentWaveCount].spawnCount < waves[currentWaveCount].waveQuota && !maxEnemiesReached)
         {
+
             foreach (var enemyGroup in waves[currentWaveCount].enemyGroups)
             {
-                // Check if min number for an enemy group is reached
+                // Check if min number of enemies for this type has been spawned
+                // If less than the count for the wave, continue to spawn
                 if (enemyGroup.spawnCount < enemyGroup.enemyCount)
                 {
                     

@@ -7,6 +7,9 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
 
+    //SFX audio Manager
+    AudioManager audioManager;
+    
     public static GameManager instance;
 
     // Defining the stats of the game
@@ -62,6 +65,9 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        
         // Warning to see if there is another singleton of this kind in game
         if(instance == null)
         {
@@ -138,6 +144,7 @@ public class GameManager : MonoBehaviour
     {
         if(currentState != GameState.Paused)
         {
+            audioManager.PlaySound(audioManager.pause);
             previousState = currentState;
             ChangeState(GameState.Paused);
             Time.timeScale = 0f; // Stops game
@@ -218,12 +225,14 @@ public class GameManager : MonoBehaviour
 
     public void StartLevelUp()
     {
+        audioManager.PlaySound(audioManager.lvlUp);
         ChangeState(GameState.LevelUp);
         playerObject.SendMessage("RemoveAndApplyUpgrades");
     }
 
     public void EndLevelUp()
     {
+        audioManager.PlaySound(audioManager.clickLvlUp);
         choosingUpgrade = false;
         Time.timeScale = 1f;
         levelUpScreen.SetActive(false);

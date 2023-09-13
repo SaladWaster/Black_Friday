@@ -17,9 +17,9 @@ MonoBehaviour:
   speed: 0
   cooldownDuration: 3
   pierce: 0
-  range: 1.2
+  range: 1.35
   level: 1
   nextLevelPrefab: {fileID: 3710222638268734357, guid: 70196a6a1cb72b14bb458712c976c9d0, type: 3}
   name: Bomberman Level 4
-  description: Increase the attack radius by 10%
+  description: Increase the attack radius by 35%
   icon: {fileID: 21300000, guid: d8da91cb007e8624fab575d93f2fde11, type: 3}

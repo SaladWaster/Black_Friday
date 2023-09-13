@@ -7,6 +7,7 @@ public class BombBehavior : ProjectileWepBehaviour
     private Animator animator;
     public float explosionRadius;
 
+    [SerializeField]
     float currentRadiusMultiplier;
 
     protected override void Awake()
