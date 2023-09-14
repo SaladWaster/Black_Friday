@@ -6,7 +6,7 @@ public class PlayerCollector : MonoBehaviour
 {
     PlayerStats player;
     CircleCollider2D playerCollector;
-    public float pullSpeed;
+    // public float pullSpeed;
     
 
     void Start()
@@ -39,16 +39,19 @@ public class PlayerCollector : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         // Check if other game object(s) have ICollectible interface
-        if(col.gameObject.TryGetComponent(out ICollectable collectable))
+        //if(col.gameObject.TryGetComponent(out ICollectable collectable))
+        if(col.gameObject.TryGetComponent<PickUp>(out PickUp pickup))
         {
             //collectable.
 
             // Magnet pull animation
             // Retrieves the Rigidbody2D component of the item
             Rigidbody2D rb = col.gameObject.GetComponent<Rigidbody2D>();
+
+            pickup.SetTarget(transform.parent.position);
             // // Vector 2d that points to player direction from item position and normalize it
-            Vector2 forceDirection = (transform.position - col.transform.position).normalized;
-            rb.AddForce(forceDirection * pullSpeed);
+            // Vector2 forceDirection = (transform.position - col.transform.position).normalized;
+            // rb.AddForce(forceDirection * pullSpeed);
 
             //col.gameObject.GetComponent<MoveItemToPlayer>().MoveToPlayer(transform);
 

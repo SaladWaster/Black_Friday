@@ -33,7 +33,13 @@ public class GameManager : MonoBehaviour
     public GameObject resultsScreen;
     public GameObject levelUpScreen;
 
-
+    [Header("Paused Stat Displays")]
+    public TMP_Text pausedHealthDisplay;
+    public TMP_Text pausedRecoveryDisplay;
+    public TMP_Text pausedMoveSpeedDisplay;
+    public TMP_Text pausedMightDisplay;
+    public TMP_Text pausedProjectileSpeedDisplay;
+    public TMP_Text pausedMagnetDisplay;
 
     [Header("Current Stat Displays")]
     public TMP_Text currentHealthDisplay;
@@ -42,6 +48,10 @@ public class GameManager : MonoBehaviour
     public TMP_Text currentMightDisplay;
     public TMP_Text currentProjectileSpeedDisplay;
     public TMP_Text currentMagnetDisplay;
+
+    [Header("Results Screen Displays")]
+    public TMP_Text levelReachedDisplay;
+    public TMP_Text timeSurvivedDisplay;
 
 
 
@@ -144,6 +154,14 @@ public class GameManager : MonoBehaviour
     {
         if(currentState != GameState.Paused)
         {
+
+            pausedHealthDisplay.text = currentHealthDisplay.text;
+            pausedRecoveryDisplay.text = currentRecoveryDisplay.text;
+            pausedMoveSpeedDisplay.text = currentMoveSpeedDisplay.text;
+            pausedMightDisplay.text = currentMightDisplay.text;
+            pausedProjectileSpeedDisplay.text = currentProjectileSpeedDisplay.text;
+            pausedMagnetDisplay.text = currentMagnetDisplay.text;
+
             audioManager.PlaySound(audioManager.pause);
             previousState = currentState;
             ChangeState(GameState.Paused);
@@ -193,6 +211,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        timeSurvivedDisplay.text = stopwatchDisplay.text;
         ChangeState(GameState.GameOver);
     }
 
@@ -239,18 +258,8 @@ public class GameManager : MonoBehaviour
         ChangeState(GameState.Gameplay);
     }
     
-    // // Test function
-    // // An enum is a set of named integer constants
-    // // thus, incrementing/decrementing works
-    // void TestSwitchState()
-    // {
-    //     if(Input.GetKeyDown(KeyCode.E))
-    //     {
-    //         currentState++;
-    //     }
-    //     else if(Input.GetKeyDown(KeyCode.Q))
-    //     {
-    //         currentState--;
-    //     }
-    // }
+    public void AssignLevelReachedUI(int levelReachedData)
+    {
+        levelReachedDisplay.text = levelReachedData.ToString();
+    }
 }

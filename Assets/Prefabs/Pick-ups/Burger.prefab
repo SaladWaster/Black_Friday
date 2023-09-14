@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -2598264420305332144}
   - component: {fileID: -5252919866449269106}
   - component: {fileID: -7119063990753048887}
-  - component: {fileID: 8427689876789499345}
   m_Layer: 0
   m_Name: Burger
   m_TagString: Untagged
@@ -126,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6a7183ee9752d45a41fe1035121025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttracted: 0
   healthRestored: 50
 --- !u!50 &-7119063990753048887
 Rigidbody2D:
@@ -148,18 +148,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8427689876789499345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7499207845158348492}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c122f4f281911404fb8de008ab1dbbfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  pullSpeed: 50
-  isMoving: 0
