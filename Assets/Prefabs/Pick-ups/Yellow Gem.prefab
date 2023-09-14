@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7192372788016701724}
   - component: {fileID: 2500826642802976797}
   - component: {fileID: 8141807385242924031}
-  - component: {fileID: -7107698046433726604}
   m_Layer: 0
   m_Name: Yellow Gem
   m_TagString: Untagged
@@ -116,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc76c8f9b44b8f4aa2abc27df54a148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttracted: 0
   experienceGranted: 200
 --- !u!50 &8141807385242924031
 Rigidbody2D:
@@ -138,18 +138,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-7107698046433726604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5828225064562824391}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c122f4f281911404fb8de008ab1dbbfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  pullSpeed: 10
-  isMoving: 0

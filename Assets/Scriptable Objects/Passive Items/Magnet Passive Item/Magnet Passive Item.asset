@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c0130b9336bb04281f91a308c1689f, type: 3}
   m_Name: Magnet Passive Item
   m_EditorClassIdentifier: 
-  multiplier: 20
+  multiplier: 30
   level: 1
   nextLevelPrefab: {fileID: 2813830849254228355, guid: 319d065c1fcf2364d8241368d0bc13bf, type: 3}
   name: Treasure Hunter
-  description: Increase item pick-up range by 20%
+  description: Increase item pick-up range by 30%
   icon: {fileID: 589939895, guid: d091c8042489b784e832dd17c579a131, type: 3}

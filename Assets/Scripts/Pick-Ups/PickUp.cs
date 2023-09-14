@@ -14,9 +14,11 @@ public class PickUp : MonoBehaviour, ICollectable
     public bool isAttracted = false;
 
 
-    private Rigidbody2D rb; 
 
-    void Awake()
+
+   Rigidbody2D rb; 
+
+    private void Awake()
     {
         player = FindObjectOfType<PlayerStats>();
         rb = GetComponent<Rigidbody2D>();
@@ -27,15 +29,22 @@ public class PickUp : MonoBehaviour, ICollectable
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(isAttracted)
         {
             
             // // Vector 2d that points to player direction from item position and normalize it
-            Vector2 forceDirection = (player.transform.position - transform.position).normalized;
-            rb.AddForce(forceDirection * 300);
+            Vector2 targetDirection = (player.transform.position - transform.position).normalized;
+            //rb.AddForce(forceDirection * 300);
+            rb.velocity = new Vector2(targetDirection.x, targetDirection.y) * 10f;
         }
+    }
+
+    public void SetTarget(Vector3 position)
+    {
+        player.transform.position = position;
+        isAttracted = true;
     }
 
     public virtual void Collect()
