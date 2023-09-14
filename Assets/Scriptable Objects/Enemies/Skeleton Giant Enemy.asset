@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Skeleton Giant Enemy
   m_EditorClassIdentifier: 
   moveSpeed: 0.6
-  maxHealth: 240
+  maxHealth: 1200
   damage: 120

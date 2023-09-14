@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b3ca921477b7f4e8ab52b4a1329d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 0b9f9ae694579834dad8c5bbf21c18d3, type: 2}
+  enemyData: {fileID: 11400000, guid: 5281c3b36c13e3445b787de19b81ca4a, type: 2}
   despawnDistance: 20
   currentMoveSpeed: 0
   currentHealth: 0
