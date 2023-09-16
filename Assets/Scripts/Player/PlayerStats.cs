@@ -12,6 +12,9 @@ public class PlayerStats : MonoBehaviour
     // For loading the correct character (and their data) into the scene
     CharacterScriptableObject characterData;
 
+    // DMG Flash
+    [SerializeField] private DamageFlash flashEffect;
+
 
 // CURRENT stats
     // These are essential as we do not want to write anything to the variables of the actual ScriptableObjects
@@ -367,6 +370,8 @@ public class PlayerStats : MonoBehaviour
             {
                 Defeated();
             }
+
+            flashEffect.Flash();
 
             UpdateHealthBar();
         }

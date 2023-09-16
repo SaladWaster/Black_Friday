@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2343193743164077684}
   - component: {fileID: 4084163812585305646}
   - component: {fileID: -5294521967138098606}
+  - component: {fileID: 2037277261341801481}
   m_Layer: 0
   m_Name: ChikBoy
   m_TagString: Enemy
@@ -149,6 +150,7 @@ MonoBehaviour:
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
+  flashEffect: {fileID: 2037277261341801481}
 --- !u!114 &4084163812585305646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,3 +191,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2037277261341801481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8907191645709617412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd33d7380eb28440a66f9fbc9b3d54d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 75c2507069af7d64c955dd52a219d904, type: 2}
+  duration: 0.125

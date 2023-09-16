@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 657140166636478649}
   - component: {fileID: 5129134420137096768}
   - component: {fileID: -5944129391405147147}
+  - component: {fileID: -4946232413171741442}
   m_Layer: 0
   m_Name: Giant Skeleton
   m_TagString: Enemy
@@ -102,7 +103,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08037186, y: -0.6102301}
+  m_Offset: {x: -0.113600045, y: -0.6102301}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 1}
@@ -113,7 +114,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.57035565, y: 0.8002064}
+  m_Size: {x: 0.5038993, y: 0.8002064}
   m_EdgeRadius: 0
 --- !u!114 &3670922262146869827
 MonoBehaviour:
@@ -144,6 +145,7 @@ MonoBehaviour:
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
+  flashEffect: {fileID: -4946232413171741442}
 --- !u!114 &5129134420137096768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,3 +186,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-4946232413171741442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3618865886686579962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd33d7380eb28440a66f9fbc9b3d54d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 75c2507069af7d64c955dd52a219d904, type: 2}
+  duration: 0.125
