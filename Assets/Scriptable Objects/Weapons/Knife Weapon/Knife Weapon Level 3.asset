@@ -16,10 +16,10 @@ MonoBehaviour:
   damage: 10
   speed: 15
   cooldownDuration: 2
-  pierce: 0
+  pierce: 5
   range: 0
   level: 3
   nextLevelPrefab: {fileID: 8396781229354854381, guid: 40806cbcd7f14794fa7d5fa1349e700a, type: 3}
   name: Knife Level 3
-  description: Speed increases 50%
+  description: Speed increases 50%, Knife now hits up to 5 times
   icon: {fileID: -804401235, guid: a4138bac6841f1c4b9537b2d29760712, type: 3}

@@ -19,6 +19,8 @@ public class EnemyStats : MonoBehaviour
     [HideInInspector]
     public float currentDamage;
 
+    [SerializeField] private DamageFlash flashEffect;
+
     
     // Awake calls before start, is more reliable
     void Awake()
@@ -45,6 +47,8 @@ public class EnemyStats : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         currentHealth -= dmg;
+
+        flashEffect.Flash();
 
         if(currentHealth <= 0)
         {

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Knife Weapon Level 4
   m_EditorClassIdentifier: 
   prefab: {fileID: 1612591080213474135, guid: 400d3c186612c064baa194d927dfd548, type: 3}
-  damage: 10
+  damage: 20
   speed: 15
   cooldownDuration: 1
-  pierce: 0
+  pierce: 5
   range: 0
   level: 4
   nextLevelPrefab: {fileID: 8396781229354854381, guid: fe7f04219c9c0db45b605750dd097033, type: 3}
   name: Knife Level 4
-  description: Cooldown Duration reduced by 1 second
+  description: Cooldown reduced by 1 second, Damage increased by 100%
   icon: {fileID: -1981320109, guid: a4138bac6841f1c4b9537b2d29760712, type: 3}

@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttracted: 0
-  healthRestored: 50
+  healthRestored: 200
 --- !u!50 &-7119063990753048887
 Rigidbody2D:
   serializedVersion: 4
