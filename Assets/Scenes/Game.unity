@@ -4012,7 +4012,7 @@ PrefabInstance:
     - target: {fileID: 2076390504545767561, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
       propertyPath: gameOverMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 9e2801d8d09620342be8780c46ed2d07, type: 3}
+      objectReference: {fileID: 8300000, guid: 2c6f36ba86f9f8649a822a30b5a460e6, type: 3}
     - target: {fileID: 2076390504545767562, guid: 926aa95600a8dac43a64c5ffae754f2d, type: 3}
       propertyPath: m_RootOrder
       value: 11

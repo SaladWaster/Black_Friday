@@ -182,6 +182,12 @@ MonoBehaviour:
   hoverFx: {fileID: 8300000, guid: 2f17952b9e55513498fc3cc4198bd761, type: 3}
   clickFx: {fileID: 8300000, guid: 96360ed5a3cc8844f9686c2918624dac, type: 3}
   death: {fileID: 8300000, guid: 26232d2f8a3ead64b8219a4de84e0dbd, type: 3}
+  lvlUp: {fileID: 0}
+  clickLvlUp: {fileID: 8300000, guid: 7c8b248e7c8e9e249affb9a5ee6754b5, type: 3}
+  gameOverMusic: {fileID: 8300000, guid: 2c6f36ba86f9f8649a822a30b5a460e6, type: 3}
+  pause: {fileID: 0}
+  pickUp: {fileID: 0}
+  bomb: {fileID: 8300000, guid: 849f7068c02745044b7293f007b9ab6a, type: 3}
 --- !u!1 &2076390505786643965
 GameObject:
   m_ObjectHideFlags: 0
