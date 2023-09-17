@@ -9,11 +9,14 @@ public class BombBehavior : ProjectileWepBehaviour
 
     [SerializeField]
     float currentRadiusMultiplier;
+    //SFX
+    AudioManager audioManager;
 
     protected override void Awake()
     {
         base.Awake();
         animator = GetComponent<Animator>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
     protected override void Start()
     {
@@ -30,6 +33,7 @@ public class BombBehavior : ProjectileWepBehaviour
     private void Detonate()
     {
         animator.SetTrigger("Explode");
+        audioManager.PlaySound(audioManager.bomb);
         RaycastHit2D[] explosionHits = Physics2D.CircleCastAll(transform.position, explosionRadius * currentRadiusMultiplier, Vector2.zero);
         //Find all the things in the cast that the bomb cares about and call appropriate behavior on them
         foreach (RaycastHit2D explosionHit in explosionHits)

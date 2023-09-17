@@ -19,6 +19,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip gameOverMusic;
     public AudioClip pause;
     public AudioClip pickUp;
+    public AudioClip bomb;
 
     // Add a public property to access the music field
     public AudioSource Music
